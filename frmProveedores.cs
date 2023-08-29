@@ -10,24 +10,11 @@ using System.Windows.Forms;
 
 namespace pryFernandezIES
 {
-    public partial class Form1 : Form
+    public partial class frmProveedores : Form
     {
-        public Form1()
+        public frmProveedores()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            /*
-             1
-             
-             
-             */
-
-
-            //Control OpenFileDialog
-            //   "    OpenFoulderDialog
         }
     }
 }
