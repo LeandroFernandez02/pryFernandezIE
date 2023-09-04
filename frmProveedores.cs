@@ -18,56 +18,22 @@ namespace pryFernandezIES
             InitializeComponent();
         }
 
-        private void btnAbrir_Click(object sender, EventArgs e)
+        private void btnSeleccionCarpeta_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnCargar_Click(object sender, EventArgs e)
-        {
-            string carpeta = Application.StartupPath + @"\"+ txtProveedores.Text;
-
-            try
-            {
-                if (Directory.Exists(carpeta))
-                {
-                    MessageBox.Show("La carpeta ya existe");
-                }
-                else
-                {
-                    MessageBox.Show("Se creo una carpeta:" + txtProveedores.Text);
-                    Directory.CreateDirectory(carpeta);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: "+ ex.Message);
-                throw;
-            }
-
-
+            fbdSeleccionCarpeta.ShowDialog();
+            lblRuta.Text = fbdSeleccionCarpeta.SelectedPath;          
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    StreamWriter swManejoArchivo = new StreamWriter("miarchivo", true);
-                    swManejoArchivo.WriteLine(txtDatos.Text);
+            string ruta = fbdSeleccionCarpeta.SelectedPath;
+            ruta += txtNombreArchivo.Text;
 
-                    swManejoArchivo.Close();
+            StreamWriter ManejoArchivo = new StreamWriter(ruta);
 
-                    MessageBox.Show("Almacenado");
-                    txtDatos.Clear();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Fatal Error:" + ex.Message);
-                    throw;
-                }
-            }
+            MessageBox.Show("Archivo Creado");
+            lblRuta.Text = "";
+            txtNombreArchivo.Clear();
         }
     }
 }
