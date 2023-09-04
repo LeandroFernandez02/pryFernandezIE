@@ -19,23 +19,34 @@ namespace pryFernandezIES
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
-            frmProveedores proveedores = new frmProveedores();
-            proveedores.ShowDialog();
-            this.Close();
+            abrirFormHijo(new frmProveedores());
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            frmClientes clientes = new frmClientes();
-            clientes.ShowDialog();
-            this.Close();
+            abrirFormHijo(new frmClientes());           
         }
 
         private void btnAyuda_Click(object sender, EventArgs e)
         {
-            frmAyuda ayuda = new frmAyuda();
-            ayuda.ShowDialog();
-            this.Close();
+            abrirFormHijo(new frmAyuda());
+        }
+
+        private Form formActivo = null;
+
+        private void abrirFormHijo(Form formHijo)
+        {
+            if (formActivo != null)
+                formActivo.Close();
+                formActivo = formHijo;
+                formHijo.TopLevel = false;
+                formHijo.FormBorderStyle = FormBorderStyle.None;
+                formHijo.Dock = DockStyle.Fill;
+                pnlFormHijo.Controls.Add(formHijo);
+                pnlFormHijo.Tag = formHijo;
+                formHijo.BringToFront();
+                formHijo.Show();
+            
         }
     }
 }
