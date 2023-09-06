@@ -17,14 +17,19 @@ namespace pryFernandezIES
             InitializeComponent();
         }
 
-        private void btnProveedores_Click(object sender, EventArgs e)
+        private void btnCargarProveedores_Click(object sender, EventArgs e)
         {
-            abrirFormHijo(new frmProveedores());
+            abrirFormHijo(new frmCargarProveedor());
+        }
+
+        private void btnBuscarProveedor_Click(object sender, EventArgs e)
+        {
+            abrirFormHijo(new frmBuscarProveedor());
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            abrirFormHijo(new frmClientes());           
+            abrirFormHijo(new frmClientes());
         }
 
         private void btnAyuda_Click(object sender, EventArgs e)
@@ -38,15 +43,15 @@ namespace pryFernandezIES
         {
             if (formActivo != null)
                 formActivo.Close();
-                formActivo = formHijo;
-                formHijo.TopLevel = false;
-                formHijo.FormBorderStyle = FormBorderStyle.None;
-                formHijo.Dock = DockStyle.Fill;
-                pnlFormHijo.Controls.Add(formHijo);
-                pnlFormHijo.Tag = formHijo;
-                formHijo.BringToFront();
-                formHijo.Show();
-            
+            formActivo = formHijo;
+            formHijo.TopLevel = false;
+            formHijo.FormBorderStyle = FormBorderStyle.None;
+            formHijo.Dock = DockStyle.Fill;
+            pnlFormHijo.Controls.Add(formHijo);
+            pnlFormHijo.Tag = formHijo;
+            formHijo.BringToFront();
+            formHijo.Show();
+
         }
     }
 }

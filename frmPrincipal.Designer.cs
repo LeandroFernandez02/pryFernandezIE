@@ -29,9 +29,11 @@ namespace pryFernandezIES
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnBuscarProveedor = new System.Windows.Forms.Button();
             this.btnAyuda = new System.Windows.Forms.Button();
-            this.btnProveedores = new System.Windows.Forms.Button();
+            this.btnCargarProveedores = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.pctLogo = new System.Windows.Forms.PictureBox();
@@ -47,8 +49,9 @@ namespace pryFernandezIES
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(73)))), ((int)(((byte)(123)))));
+            this.pnlMenu.Controls.Add(this.btnBuscarProveedor);
             this.pnlMenu.Controls.Add(this.btnAyuda);
-            this.pnlMenu.Controls.Add(this.btnProveedores);
+            this.pnlMenu.Controls.Add(this.btnCargarProveedores);
             this.pnlMenu.Controls.Add(this.btnClientes);
             this.pnlMenu.Controls.Add(this.pnlLogo);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -56,6 +59,22 @@ namespace pryFernandezIES
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(200, 561);
             this.pnlMenu.TabIndex = 0;
+            // 
+            // btnBuscarProveedor
+            // 
+            this.btnBuscarProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(42)))), ((int)(((byte)(74)))));
+            this.btnBuscarProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarProveedor.FlatAppearance.BorderSize = 0;
+            this.btnBuscarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarProveedor.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarProveedor.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(0, 194);
+            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
+            this.btnBuscarProveedor.Size = new System.Drawing.Size(200, 37);
+            this.btnBuscarProveedor.TabIndex = 3;
+            this.btnBuscarProveedor.Text = "Buscar Proveedor";
+            this.btnBuscarProveedor.UseVisualStyleBackColor = false;
+            this.btnBuscarProveedor.Click += new System.EventHandler(this.btnBuscarProveedor_Click);
             // 
             // btnAyuda
             // 
@@ -65,7 +84,7 @@ namespace pryFernandezIES
             this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAyuda.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAyuda.ForeColor = System.Drawing.Color.White;
-            this.btnAyuda.Location = new System.Drawing.Point(0, 194);
+            this.btnAyuda.Location = new System.Drawing.Point(0, 237);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Size = new System.Drawing.Size(200, 37);
             this.btnAyuda.TabIndex = 2;
@@ -73,21 +92,21 @@ namespace pryFernandezIES
             this.btnAyuda.UseVisualStyleBackColor = false;
             this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
-            // btnProveedores
+            // btnCargarProveedores
             // 
-            this.btnProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(42)))), ((int)(((byte)(74)))));
-            this.btnProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProveedores.FlatAppearance.BorderSize = 0;
-            this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProveedores.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProveedores.ForeColor = System.Drawing.Color.White;
-            this.btnProveedores.Location = new System.Drawing.Point(0, 151);
-            this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Size = new System.Drawing.Size(200, 37);
-            this.btnProveedores.TabIndex = 2;
-            this.btnProveedores.Text = "Proveedores";
-            this.btnProveedores.UseVisualStyleBackColor = false;
-            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
+            this.btnCargarProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(42)))), ((int)(((byte)(74)))));
+            this.btnCargarProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCargarProveedores.FlatAppearance.BorderSize = 0;
+            this.btnCargarProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargarProveedores.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargarProveedores.ForeColor = System.Drawing.Color.White;
+            this.btnCargarProveedores.Location = new System.Drawing.Point(0, 151);
+            this.btnCargarProveedores.Name = "btnCargarProveedores";
+            this.btnCargarProveedores.Size = new System.Drawing.Size(200, 37);
+            this.btnCargarProveedores.TabIndex = 2;
+            this.btnCargarProveedores.Text = "Cargar Proveedor";
+            this.btnCargarProveedores.UseVisualStyleBackColor = false;
+            this.btnCargarProveedores.Click += new System.EventHandler(this.btnCargarProveedores_Click);
             // 
             // btnClientes
             // 
@@ -155,6 +174,7 @@ namespace pryFernandezIES
             this.Controls.Add(this.pnlFormHijo);
             this.Controls.Add(this.pnlMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
@@ -174,8 +194,9 @@ namespace pryFernandezIES
         private System.Windows.Forms.PictureBox pctLogo;
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnAyuda;
-        private System.Windows.Forms.Button btnProveedores;
+        private System.Windows.Forms.Button btnCargarProveedores;
         private System.Windows.Forms.Panel pnlFormHijo;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnBuscarProveedor;
     }
 }

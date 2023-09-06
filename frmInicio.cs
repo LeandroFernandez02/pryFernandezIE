@@ -26,8 +26,8 @@ namespace pryFernandezIES
         private void btnIniciar_Click(object sender, EventArgs e)
         {
             frmPrincipal principal = new frmPrincipal();
-            principal.ShowDialog();
-            this.Close();
+            principal.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)

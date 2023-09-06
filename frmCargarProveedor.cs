@@ -11,9 +11,9 @@ using System.IO;
 
 namespace pryFernandezIES
 {
-    public partial class frmProveedores : Form
+    public partial class frmCargarProveedor : Form
     {
-        public frmProveedores()
+        public frmCargarProveedor()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace pryFernandezIES
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             string ruta = fbdSeleccionCarpeta.SelectedPath;
-            ruta += txtNombreArchivo.Text;
+            ruta += @"\" +  txtNombreArchivo.Text;
 
             StreamWriter ManejoArchivo = new StreamWriter(ruta);
 

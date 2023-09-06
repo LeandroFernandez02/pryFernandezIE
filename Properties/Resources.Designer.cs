@@ -63,6 +63,16 @@ namespace pryFernandezIES.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fondo_inicioBBVA {
+            get {
+                object obj = ResourceManager.GetObject("fondo inicioBBVA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imgLogoSeguro {
             get {
                 object obj = ResourceManager.GetObject("imgLogoSeguro", resourceCulture);
@@ -76,6 +86,16 @@ namespace pryFernandezIES.Properties {
         internal static System.Drawing.Bitmap imgLogoSeguro_transformed {
             get {
                 object obj = ResourceManager.GetObject("imgLogoSeguro-transformed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_bbva_fondo_2 {
+            get {
+                object obj = ResourceManager.GetObject("logo-bbva-fondo-2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

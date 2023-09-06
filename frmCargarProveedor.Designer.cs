@@ -1,7 +1,7 @@
 ﻿
 namespace pryFernandezIES
 {
-    partial class frmProveedores
+    partial class frmCargarProveedor
     {
         /// <summary>
         /// Required designer variable.
@@ -34,11 +34,12 @@ namespace pryFernandezIES
             this.lblRuta = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtNombreArchivo = new System.Windows.Forms.TextBox();
+            this.lblDireccion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSeleccionCarpeta
             // 
-            this.btnSeleccionCarpeta.Location = new System.Drawing.Point(57, 45);
+            this.btnSeleccionCarpeta.Location = new System.Drawing.Point(313, 56);
             this.btnSeleccionCarpeta.Name = "btnSeleccionCarpeta";
             this.btnSeleccionCarpeta.Size = new System.Drawing.Size(170, 36);
             this.btnSeleccionCarpeta.TabIndex = 0;
@@ -49,14 +50,14 @@ namespace pryFernandezIES
             // lblRuta
             // 
             this.lblRuta.AutoSize = true;
-            this.lblRuta.Location = new System.Drawing.Point(54, 117);
+            this.lblRuta.Location = new System.Drawing.Point(406, 113);
             this.lblRuta.Name = "lblRuta";
             this.lblRuta.Size = new System.Drawing.Size(0, 13);
             this.lblRuta.TabIndex = 1;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(57, 188);
+            this.btnGuardar.Location = new System.Drawing.Point(313, 199);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(170, 36);
             this.btnGuardar.TabIndex = 2;
@@ -66,22 +67,32 @@ namespace pryFernandezIES
             // 
             // txtNombreArchivo
             // 
-            this.txtNombreArchivo.Location = new System.Drawing.Point(57, 150);
+            this.txtNombreArchivo.Location = new System.Drawing.Point(313, 154);
             this.txtNombreArchivo.Name = "txtNombreArchivo";
             this.txtNombreArchivo.Size = new System.Drawing.Size(170, 20);
             this.txtNombreArchivo.TabIndex = 3;
             // 
-            // frmProveedores
+            // lblDireccion
+            // 
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Location = new System.Drawing.Point(277, 113);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(123, 13);
+            this.lblDireccion.TabIndex = 4;
+            this.lblDireccion.Text = "Direccion Seleccionada:";
+            // 
+            // frmCargarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(718, 522);
+            this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.txtNombreArchivo);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblRuta);
             this.Controls.Add(this.btnSeleccionCarpeta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmProveedores";
+            this.Name = "frmCargarProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proveedores";
             this.ResumeLayout(false);
@@ -95,5 +106,6 @@ namespace pryFernandezIES
         private System.Windows.Forms.Label lblRuta;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtNombreArchivo;
+        private System.Windows.Forms.Label lblDireccion;
     }
 }
