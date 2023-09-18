@@ -39,7 +39,7 @@ namespace pryFernandezIES
             // 
             // btnSeleccionCarpeta
             // 
-            this.btnSeleccionCarpeta.Location = new System.Drawing.Point(313, 56);
+            this.btnSeleccionCarpeta.Location = new System.Drawing.Point(239, 100);
             this.btnSeleccionCarpeta.Name = "btnSeleccionCarpeta";
             this.btnSeleccionCarpeta.Size = new System.Drawing.Size(170, 36);
             this.btnSeleccionCarpeta.TabIndex = 0;
@@ -50,14 +50,14 @@ namespace pryFernandezIES
             // lblRuta
             // 
             this.lblRuta.AutoSize = true;
-            this.lblRuta.Location = new System.Drawing.Point(406, 113);
+            this.lblRuta.Location = new System.Drawing.Point(332, 157);
             this.lblRuta.Name = "lblRuta";
             this.lblRuta.Size = new System.Drawing.Size(0, 13);
             this.lblRuta.TabIndex = 1;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(313, 199);
+            this.btnGuardar.Location = new System.Drawing.Point(239, 243);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(170, 36);
             this.btnGuardar.TabIndex = 2;
@@ -67,7 +67,7 @@ namespace pryFernandezIES
             // 
             // txtNombreArchivo
             // 
-            this.txtNombreArchivo.Location = new System.Drawing.Point(313, 154);
+            this.txtNombreArchivo.Location = new System.Drawing.Point(239, 198);
             this.txtNombreArchivo.Name = "txtNombreArchivo";
             this.txtNombreArchivo.Size = new System.Drawing.Size(170, 20);
             this.txtNombreArchivo.TabIndex = 3;
@@ -75,7 +75,7 @@ namespace pryFernandezIES
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(277, 113);
+            this.lblDireccion.Location = new System.Drawing.Point(203, 157);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(123, 13);
             this.lblDireccion.TabIndex = 4;
