@@ -26,10 +26,19 @@ namespace pryFernandezIES
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string ruta = fbdSeleccionCarpeta.SelectedPath;
-            ruta += @"\" +  txtNombreArchivo.Text;
 
+            //  Obtengo la ruta de la carpeta
+            string ruta = fbdSeleccionCarpeta.SelectedPath;
+            //  Obtengo el nombre del archivo que quiero crear
+            string nombreArchivo = txtNombreArchivo.Text;
+
+            //  Concateno una barra para que entre a la carpeta para poder crear el archivo mas el nombre con su extension
+            ruta += @"\" + nombreArchivo;
+
+            //  LLamo la variable ruta para crear el archivo con sus propiedades dadas anteriormente
             StreamWriter ManejoArchivo = new StreamWriter(ruta);
+            //  Cierro el archivo para evitar coaliciones o errores
+            ManejoArchivo.Close();
 
             MessageBox.Show("Archivo Creado");
             lblRuta.Text = "";

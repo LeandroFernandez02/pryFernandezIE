@@ -53,5 +53,12 @@ namespace pryFernandezIES
             formHijo.Show();
 
         }
+
+        private void horaFecha_Tick(object sender, EventArgs e)
+        {
+            string hora = DateTime.Now.ToLongTimeString();
+            string fecha = DateTime.Now.ToLongDateString();
+            lblFechaHora.Text = hora + " " + fecha; 
+        }
     }
 }

@@ -43,7 +43,7 @@ namespace pryFernandezIES
             this.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciar.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciar.ForeColor = System.Drawing.Color.White;
-            this.btnIniciar.Location = new System.Drawing.Point(407, 390);
+            this.btnIniciar.Location = new System.Drawing.Point(380, 390);
             this.btnIniciar.Margin = new System.Windows.Forms.Padding(0);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(161, 44);

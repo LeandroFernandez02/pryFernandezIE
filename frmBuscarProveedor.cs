@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace pryFernandezIES
 {
@@ -19,7 +12,7 @@ namespace pryFernandezIES
             //LlenarTreDirectorios();
         }
         //SABER EXPLICAR TODO EL PROCESO 
-        //PROCESO -> https://learn.microsoft.com/es-es/dotnet/desktop/winforms/controls/creating-an-explorer-style-interface-with-the-listview-and-treeview?view=netframeworkdesktop-4.8
+        
 
 
         private void frmBuscarProveedor_Load(object sender, EventArgs e)
@@ -88,8 +81,7 @@ namespace pryFernandezIES
                     dgrArchivos.Rows.Add(separarDatos);
                 }
 
-                sr.Close();
-                              
+                sr.Close();                    
             }
             catch (Exception)
             {
@@ -98,9 +90,10 @@ namespace pryFernandezIES
         }
         
         
-        private void btnNuevoProveedor_Click(object sender, EventArgs e)
+        private void btnCargarProveedor_Click(object sender, EventArgs e)
         {
             pnlCargarProveedor.Visible = true;
+            txtNumero.Focus();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -108,6 +101,226 @@ namespace pryFernandezIES
             frmPrincipal volver = new frmPrincipal();
             volver.Show();
             this.Hide();
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNumero.Clear();
+            txtEntidad.Clear();
+            txtApertura.Clear();
+            txtNumExpediente.Clear();
+            txtJuzg.Clear();
+            txtJurisd.Clear();
+            txtDireccion.Clear();
+            txtLiquidador.Clear();
+        }
+
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            string archivoSeleccionado = treDirectorios.SelectedNode.FullPath;
+
+            try
+            {
+                StreamWriter swManejoArchivo = new StreamWriter(archivoSeleccionado, true);
+               
+                swManejoArchivo.Write(txtNumero.Text + ";");
+                swManejoArchivo.Write(txtEntidad.Text + ";");
+                swManejoArchivo.Write(txtApertura.Text + ";");
+                swManejoArchivo.Write(txtNumExpediente.Text + ";");
+                swManejoArchivo.Write(txtJuzg.Text + ";");
+                swManejoArchivo.Write(txtJurisd.Text + ";");
+                swManejoArchivo.Write(txtDireccion.Text + ";");
+                swManejoArchivo.Write(txtLiquidador.Text + ";");
+                swManejoArchivo.WriteLine();
+
+                swManejoArchivo.Close();
+
+                MessageBox.Show("Proveedor agregado");
+                txtNumero.Clear();
+                txtEntidad.Clear();
+                txtApertura.Clear();
+                txtNumExpediente.Clear();
+                txtJuzg.Clear();
+                txtJurisd.Clear();
+                txtDireccion.Clear();
+                txtLiquidador.Clear();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se econtro el archivo");
+                throw;
+            }
+        }
+
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //  Condicional para solo numeros y alerta
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo Numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+            //  Condicional para pasar de un textbox a otro
+            if (e.KeyChar == Convert.ToChar(Keys.Enter) && e.KeyChar == 13)
+            {
+                txtEntidad.Focus();
+                e.Handled = true;
+            }
+                
+        }
+
+        private void txtEntidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo Letras", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+
+                
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                txtApertura.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtApertura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 46) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo Numeros y /", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                txtNumExpediente.Focus();
+                e.Handled = true;
+            }    
+        }
+
+        private void txtNumExpediente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 46) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo Numeros y /", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                txtJuzg.Focus();
+                e.Handled = true;
+            }
+ 
+        }
+
+        private void txtJuzg_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 91) || (e.KeyChar >= 123 && e.KeyChar <= 247) || (e.KeyChar >= 249 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo Letras y Numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                txtJurisd.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtJurisd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 33 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo Letras", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                txtDireccion.Focus();
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 33 && e.KeyChar <= 43) || (e.KeyChar >= 58 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo Letras", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+
+            if (e.KeyChar == Convert.ToChar(Keys.Enter)) 
+            {
+                txtLiquidador.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtLiquidador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo Letras", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                btnCargar.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void btnCargar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string archivoSeleccionado = treDirectorios.SelectedNode.FullPath;
+
+            try
+            {
+                StreamWriter swManejoArchivo = new StreamWriter(archivoSeleccionado, true);
+
+                swManejoArchivo.Write(txtNumero.Text + ";");
+                swManejoArchivo.Write(txtEntidad.Text + ";");
+                swManejoArchivo.Write(txtApertura.Text + ";");
+                swManejoArchivo.Write(txtNumExpediente.Text + ";");
+                swManejoArchivo.Write(txtJuzg.Text + ";");
+                swManejoArchivo.Write(txtJurisd.Text + ";");
+                swManejoArchivo.Write(txtDireccion.Text + ";");
+                swManejoArchivo.Write(txtLiquidador.Text + ";");
+                swManejoArchivo.WriteLine();
+
+                swManejoArchivo.Close();
+
+                MessageBox.Show("Proveedor agregado");
+                txtNumero.Clear();
+                txtEntidad.Clear();
+                txtApertura.Clear();
+                txtNumExpediente.Clear();
+                txtJuzg.Clear();
+                txtJurisd.Clear();
+                txtDireccion.Clear();
+                txtLiquidador.Clear();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se econtro el archivo");
+                throw;
+            }
         }
     }
 }

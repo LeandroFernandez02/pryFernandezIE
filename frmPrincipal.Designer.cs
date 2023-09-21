@@ -29,6 +29,7 @@ namespace pryFernandezIES
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnBuscarProveedor = new System.Windows.Forms.Button();
@@ -39,6 +40,8 @@ namespace pryFernandezIES
             this.pctLogo = new System.Windows.Forms.PictureBox();
             this.pnlFormHijo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblFechaHora = new System.Windows.Forms.Label();
+            this.horaFecha = new System.Windows.Forms.Timer(this.components);
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
@@ -147,6 +150,7 @@ namespace pryFernandezIES
             // 
             // pnlFormHijo
             // 
+            this.pnlFormHijo.Controls.Add(this.lblFechaHora);
             this.pnlFormHijo.Controls.Add(this.pictureBox1);
             this.pnlFormHijo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlFormHijo.Location = new System.Drawing.Point(200, 0);
@@ -164,6 +168,22 @@ namespace pryFernandezIES
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // lblFechaHora
+            // 
+            this.lblFechaHora.BackColor = System.Drawing.Color.White;
+            this.lblFechaHora.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(73)))), ((int)(((byte)(123)))));
+            this.lblFechaHora.Location = new System.Drawing.Point(339, 0);
+            this.lblFechaHora.Name = "lblFechaHora";
+            this.lblFechaHora.Size = new System.Drawing.Size(395, 30);
+            this.lblFechaHora.TabIndex = 2;
+            this.lblFechaHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // horaFecha
+            // 
+            this.horaFecha.Enabled = true;
+            this.horaFecha.Tick += new System.EventHandler(this.horaFecha_Tick);
             // 
             // frmPrincipal
             // 
@@ -198,5 +218,7 @@ namespace pryFernandezIES
         private System.Windows.Forms.Panel pnlFormHijo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnBuscarProveedor;
+        private System.Windows.Forms.Label lblFechaHora;
+        private System.Windows.Forms.Timer horaFecha;
     }
 }

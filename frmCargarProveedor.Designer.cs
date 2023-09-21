@@ -39,6 +39,7 @@ namespace pryFernandezIES
             // 
             // btnSeleccionCarpeta
             // 
+            this.btnSeleccionCarpeta.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionCarpeta.Location = new System.Drawing.Point(239, 100);
             this.btnSeleccionCarpeta.Name = "btnSeleccionCarpeta";
             this.btnSeleccionCarpeta.Size = new System.Drawing.Size(170, 36);
@@ -50,13 +51,15 @@ namespace pryFernandezIES
             // lblRuta
             // 
             this.lblRuta.AutoSize = true;
+            this.lblRuta.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRuta.Location = new System.Drawing.Point(332, 157);
             this.lblRuta.Name = "lblRuta";
-            this.lblRuta.Size = new System.Drawing.Size(0, 13);
+            this.lblRuta.Size = new System.Drawing.Size(0, 16);
             this.lblRuta.TabIndex = 1;
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Location = new System.Drawing.Point(239, 243);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(170, 36);
@@ -67,17 +70,19 @@ namespace pryFernandezIES
             // 
             // txtNombreArchivo
             // 
+            this.txtNombreArchivo.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreArchivo.Location = new System.Drawing.Point(239, 198);
             this.txtNombreArchivo.Name = "txtNombreArchivo";
-            this.txtNombreArchivo.Size = new System.Drawing.Size(170, 20);
+            this.txtNombreArchivo.Size = new System.Drawing.Size(170, 25);
             this.txtNombreArchivo.TabIndex = 3;
             // 
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDireccion.Location = new System.Drawing.Point(203, 157);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(123, 13);
+            this.lblDireccion.Size = new System.Drawing.Size(145, 16);
             this.lblDireccion.TabIndex = 4;
             this.lblDireccion.Text = "Direccion Seleccionada:";
             // 
