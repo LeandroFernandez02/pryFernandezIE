@@ -9,12 +9,10 @@ namespace pryFernandezIES
         public frmBuscarProveedor()
         {
             InitializeComponent();
-            //LlenarTreDirectorios();
+            
         }
         //SABER EXPLICAR TODO EL PROCESO 
         
-
-
         private void frmBuscarProveedor_Load(object sender, EventArgs e)
         {
             string ruta = @"..\..\Proveedores";
@@ -30,19 +28,20 @@ namespace pryFernandezIES
         {
             TreeNode newNode = new TreeNode(rutaBase.Name);
 
+
             //RECORRE LOS DIRECTORIOS
             foreach(var item in rutaBase.GetDirectories())
-            {
+            {            
                 //INICIA RECURSIVIDAD
                 newNode.Nodes.Add(crearArbol(item));
             }
 
             //RECORRE LOS ARCHIVOS
             foreach (var item in rutaBase.GetFiles())
-            {
-                newNode.Nodes.Add(new TreeNode(item.Name));
+            {          
+                newNode.Nodes.Add(new TreeNode(item.Name));               
             }
-
+            
             return newNode;
         }
 
@@ -57,10 +56,16 @@ namespace pryFernandezIES
             {
                 dgrArchivos.Rows.Clear();
                 dgrArchivos.Columns.Clear();
-                btnCargarArchivo.Text = "Volver a Seleccionar";
 
-                string rutaArchivo = treDirectorios.SelectedNode.FullPath;
-                string nombreArchivo = treDirectorios.SelectedNode.Name;
+                if (treDirectorios.SelectedNode == null)
+                {
+                    MessageBox.Show("Selecciona un archivo para cargar la grilla");
+                    return;
+                }
+
+                string rutaArchivo = Convert.ToString(treDirectorios.SelectedNode.FullPath);
+                string nombreArchivo = Convert.ToString(treDirectorios.SelectedNode.Name);
+
 
                 StreamReader sr = new StreamReader(rutaArchivo);
 
@@ -153,6 +158,7 @@ namespace pryFernandezIES
             }
         }
 
+        //  CONDICIONALES
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
             //  Condicional para solo numeros y alerta

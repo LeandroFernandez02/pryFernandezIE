@@ -29,6 +29,7 @@ namespace pryFernandezIES
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBuscarProveedor));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnVolver = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@ namespace pryFernandezIES
             this.btnCargar = new System.Windows.Forms.Button();
             this.dgrArchivos = new System.Windows.Forms.DataGridView();
             this.btnCargarProveedor = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -81,17 +83,18 @@ namespace pryFernandezIES
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.Transparent;
             this.splitContainer1.Panel2.Controls.Add(this.pnlCargarProveedor);
             this.splitContainer1.Panel2.Controls.Add(this.dgrArchivos);
-            this.splitContainer1.Size = new System.Drawing.Size(734, 561);
-            this.splitContainer1.SplitterDistance = 243;
+            this.splitContainer1.Size = new System.Drawing.Size(752, 565);
+            this.splitContainer1.SplitterDistance = 248;
             this.splitContainer1.TabIndex = 0;
             // 
             // btnVolver
             // 
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(60, 494);
+            this.btnVolver.Location = new System.Drawing.Point(60, 483);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(132, 41);
             this.btnVolver.TabIndex = 3;
@@ -102,8 +105,9 @@ namespace pryFernandezIES
             // 
             // btnNuevoProveedor
             // 
+            this.btnNuevoProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevoProveedor.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoProveedor.Location = new System.Drawing.Point(60, 374);
+            this.btnNuevoProveedor.Location = new System.Drawing.Point(60, 368);
             this.btnNuevoProveedor.Name = "btnNuevoProveedor";
             this.btnNuevoProveedor.Size = new System.Drawing.Size(132, 41);
             this.btnNuevoProveedor.TabIndex = 2;
@@ -114,8 +118,9 @@ namespace pryFernandezIES
             // 
             // btnCargarArchivo
             // 
+            this.btnCargarArchivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCargarArchivo.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargarArchivo.Location = new System.Drawing.Point(60, 327);
+            this.btnCargarArchivo.Location = new System.Drawing.Point(60, 321);
             this.btnCargarArchivo.Name = "btnCargarArchivo";
             this.btnCargarArchivo.Size = new System.Drawing.Size(132, 41);
             this.btnCargarArchivo.TabIndex = 1;
@@ -136,7 +141,7 @@ namespace pryFernandezIES
             this.pnlCargarProveedor.Controls.Add(this.groupBox1);
             this.pnlCargarProveedor.Controls.Add(this.btnLimpiar);
             this.pnlCargarProveedor.Controls.Add(this.btnCargar);
-            this.pnlCargarProveedor.Location = new System.Drawing.Point(3, 292);
+            this.pnlCargarProveedor.Location = new System.Drawing.Point(7, 292);
             this.pnlCargarProveedor.Name = "pnlCargarProveedor";
             this.pnlCargarProveedor.Size = new System.Drawing.Size(481, 266);
             this.pnlCargarProveedor.TabIndex = 2;
@@ -319,6 +324,7 @@ namespace pryFernandezIES
             // 
             // btnLimpiar
             // 
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.Location = new System.Drawing.Point(274, 229);
             this.btnLimpiar.Name = "btnLimpiar";
@@ -331,6 +337,7 @@ namespace pryFernandezIES
             // 
             // btnCargar
             // 
+            this.btnCargar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCargar.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargar.Location = new System.Drawing.Point(81, 229);
             this.btnCargar.Name = "btnCargar";
@@ -345,7 +352,7 @@ namespace pryFernandezIES
             // dgrArchivos
             // 
             this.dgrArchivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrArchivos.Location = new System.Drawing.Point(3, 3);
+            this.dgrArchivos.Location = new System.Drawing.Point(7, 3);
             this.dgrArchivos.Name = "dgrArchivos";
             this.dgrArchivos.Size = new System.Drawing.Size(481, 283);
             this.dgrArchivos.TabIndex = 1;
@@ -362,11 +369,20 @@ namespace pryFernandezIES
             this.btnCargarProveedor.UseVisualStyleBackColor = true;
             this.btnCargarProveedor.Click += new System.EventHandler(this.btnCargarProveedor_Click);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "archivo.png");
+            this.imageList1.Images.SetKeyName(1, "carpeta.png");
+            this.imageList1.Images.SetKeyName(2, "carpeta-removebg-preview.png");
+            this.imageList1.Images.SetKeyName(3, "archivo-removebg-preview.png");
+            // 
             // frmBuscarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 561);
+            this.ClientSize = new System.Drawing.Size(752, 565);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -415,5 +431,6 @@ namespace pryFernandezIES
         private System.Windows.Forms.TextBox txtJurisd;
         private System.Windows.Forms.Label lblJurisd;
         private System.Windows.Forms.Button btnCargarProveedor;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

@@ -39,9 +39,12 @@ namespace pryFernandezIES
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.pctLogo = new System.Windows.Forms.PictureBox();
             this.pnlFormHijo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblFechaHora = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.horaFecha = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
@@ -57,10 +60,9 @@ namespace pryFernandezIES
             this.pnlMenu.Controls.Add(this.btnCargarProveedores);
             this.pnlMenu.Controls.Add(this.btnClientes);
             this.pnlMenu.Controls.Add(this.pnlLogo);
-            this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 35);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(200, 561);
+            this.pnlMenu.Size = new System.Drawing.Size(200, 565);
             this.pnlMenu.TabIndex = 0;
             // 
             // btnBuscarProveedor
@@ -140,6 +142,7 @@ namespace pryFernandezIES
             // 
             // pctLogo
             // 
+            this.pctLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctLogo.Image = global::pryFernandezIES.Properties.Resources.logobbvaBlanco;
             this.pctLogo.Location = new System.Drawing.Point(-40, -35);
             this.pctLogo.Name = "pctLogo";
@@ -147,53 +150,99 @@ namespace pryFernandezIES
             this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctLogo.TabIndex = 1;
             this.pctLogo.TabStop = false;
+            this.pctLogo.Click += new System.EventHandler(this.pctLogo_Click);
             // 
             // pnlFormHijo
             // 
             this.pnlFormHijo.Controls.Add(this.lblFechaHora);
             this.pnlFormHijo.Controls.Add(this.pictureBox1);
-            this.pnlFormHijo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlFormHijo.Location = new System.Drawing.Point(200, 0);
+            this.pnlFormHijo.Location = new System.Drawing.Point(198, 35);
             this.pnlFormHijo.Name = "pnlFormHijo";
-            this.pnlFormHijo.Size = new System.Drawing.Size(734, 561);
+            this.pnlFormHijo.Size = new System.Drawing.Size(752, 565);
             this.pnlFormHijo.TabIndex = 1;
+            // 
+            // lblFechaHora
+            // 
+            this.lblFechaHora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(73)))), ((int)(((byte)(123)))));
+            this.lblFechaHora.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.lblFechaHora.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaHora.ForeColor = System.Drawing.Color.White;
+            this.lblFechaHora.Location = new System.Drawing.Point(-1, 530);
+            this.lblFechaHora.Name = "lblFechaHora";
+            this.lblFechaHora.Size = new System.Drawing.Size(753, 35);
+            this.lblFechaHora.TabIndex = 2;
+            this.lblFechaHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::pryFernandezIES.Properties.Resources.imgLogoSeguro;
-            this.pictureBox1.Location = new System.Drawing.Point(155, 106);
+            this.pictureBox1.Location = new System.Drawing.Point(164, 108);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(427, 185);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // lblFechaHora
-            // 
-            this.lblFechaHora.BackColor = System.Drawing.Color.White;
-            this.lblFechaHora.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(73)))), ((int)(((byte)(123)))));
-            this.lblFechaHora.Location = new System.Drawing.Point(339, 0);
-            this.lblFechaHora.Name = "lblFechaHora";
-            this.lblFechaHora.Size = new System.Drawing.Size(395, 30);
-            this.lblFechaHora.TabIndex = 2;
-            this.lblFechaHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // horaFecha
             // 
             this.horaFecha.Enabled = true;
             this.horaFecha.Tick += new System.EventHandler(this.horaFecha_Tick);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(73)))), ((int)(((byte)(123)))));
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(950, 36);
+            this.label1.TabIndex = 3;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(73)))), ((int)(((byte)(123)))));
+            this.btnMinimizar.BackgroundImage = global::pryFernandezIES.Properties.Resources.minimazar;
+            this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Location = new System.Drawing.Point(874, 6);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(23, 23);
+            this.btnMinimizar.TabIndex = 4;
+            this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(73)))), ((int)(((byte)(123)))));
+            this.btnCerrar.BackgroundImage = global::pryFernandezIES.Properties.Resources.cerrar;
+            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Location = new System.Drawing.Point(913, 6);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(23, 23);
+            this.btnCerrar.TabIndex = 3;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(934, 561);
+            this.ClientSize = new System.Drawing.Size(950, 600);
+            this.Controls.Add(this.btnMinimizar);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlFormHijo);
             this.Controls.Add(this.pnlMenu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -220,5 +269,8 @@ namespace pryFernandezIES
         private System.Windows.Forms.Button btnBuscarProveedor;
         private System.Windows.Forms.Label lblFechaHora;
         private System.Windows.Forms.Timer horaFecha;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnMinimizar;
     }
 }

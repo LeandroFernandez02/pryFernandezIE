@@ -152,5 +152,29 @@
   <ItemGroup>
     <None Include="Resources\logo-bbva-fondo-2.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xmark-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimazar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1-circle-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\numero-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\numero-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar-PhotoRoom.png-PhotoRoom.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

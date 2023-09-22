@@ -17,6 +17,16 @@ namespace pryFernandezIES
             InitializeComponent();
         }
 
+        //  MENU
+        private void pctLogo_Click(object sender, EventArgs e)
+        {
+            if (formActivo != null)
+            {
+                formActivo.Close();
+            }
+            
+        }
+
         private void btnCargarProveedores_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new frmCargarProveedor());
@@ -37,6 +47,7 @@ namespace pryFernandezIES
             abrirFormHijo(new frmAyuda());
         }
 
+        //  ABRIR FORMULARIO DENTRO DEL PRINCIPAL
         private Form formActivo = null;
 
         private void abrirFormHijo(Form formHijo)
@@ -54,11 +65,25 @@ namespace pryFernandezIES
 
         }
 
+        // HORA
         private void horaFecha_Tick(object sender, EventArgs e)
         {
             string hora = DateTime.Now.ToLongTimeString();
             string fecha = DateTime.Now.ToLongDateString();
-            lblFechaHora.Text = hora + " " + fecha; 
+            lblFechaHora.Text = hora + "   " + fecha; 
         }
+
+        // CERRAR Y MINIMIZAR
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+       
     }
 }

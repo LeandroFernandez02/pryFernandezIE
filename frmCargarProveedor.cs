@@ -16,12 +16,13 @@ namespace pryFernandezIES
         public frmCargarProveedor()
         {
             InitializeComponent();
+            btnGuardar.Enabled = false;
         }
 
         private void btnSeleccionCarpeta_Click(object sender, EventArgs e)
         {
             fbdSeleccionCarpeta.ShowDialog();
-            lblRuta.Text = fbdSeleccionCarpeta.SelectedPath;          
+            lblDireccion.Text = fbdSeleccionCarpeta.SelectedPath;          
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -40,9 +41,18 @@ namespace pryFernandezIES
             //  Cierro el archivo para evitar coaliciones o errores
             ManejoArchivo.Close();
 
+            if (btnSeleccionCarpeta.DialogResult == DialogResult.OK)
+            {
+                btnGuardar.Enabled = true;
+            }
             MessageBox.Show("Archivo Creado");
-            lblRuta.Text = "";
+            lblDireccion.Text = "";
             txtNombreArchivo.Clear();
+        }
+
+        private void lblDireccion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
