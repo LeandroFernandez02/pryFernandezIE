@@ -83,7 +83,6 @@ namespace pryFernandezIES
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-       
-    }
+    
+   }
 }

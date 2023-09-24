@@ -15,19 +15,23 @@ namespace pryFernandezIES
         
         private void frmBuscarProveedor_Load(object sender, EventArgs e)
         {
-            string ruta = @"..\..\Proveedores";
+            //  CREO VARIABLE RUTA
+            string ruta = @"..\..\bin\Debug\Proveedores";
             treDirectorios.Nodes.Clear();
             pnlCargarProveedor.Visible = false;
 
+            //  CREO OBJETO RUTABASE QUE HEREDA LA RUTA
             DirectoryInfo rutaBase = new DirectoryInfo(ruta);
 
+            //  SE CREA EL TREVIEW CON LA CLASE DEFINIDA ABAJO
             treDirectorios.Nodes.Add(crearArbol(rutaBase));
         }
 
+        // CREO UNA CLASE PARA CARGAR EL TREVIEW
         private TreeNode crearArbol(DirectoryInfo rutaBase)
         {
+            //  CREA UN NODO CON LA RUTABASE
             TreeNode newNode = new TreeNode(rutaBase.Name);
-
 
             //RECORRE LOS DIRECTORIOS
             foreach(var item in rutaBase.GetDirectories())
@@ -46,10 +50,11 @@ namespace pryFernandezIES
         }
 
 
-        //CARGAR EN GRILLA
+        //  VARIABLES PARA LUEGO USAR EN GRILLA
         string leerLinea;
         string[] separarDatos;
 
+        //  CARGA DE GRILLA
         private void btnCargarArchivo_Click(object sender, EventArgs e)
         {
             try
@@ -62,13 +67,19 @@ namespace pryFernandezIES
                     MessageBox.Show("Selecciona un archivo para cargar la grilla");
                     return;
                 }
+                else if(btnCargarArchivo.Enabled = true && treDirectorios.SelectedNode != null)
+                {
+                    btnCargar.Enabled = true;
+                }
 
+                //  CREO VARIABLES CON LA RUTA SELECCIONADA EN EL TREVIEW
                 string rutaArchivo = Convert.ToString(treDirectorios.SelectedNode.FullPath);
                 string nombreArchivo = Convert.ToString(treDirectorios.SelectedNode.Name);
 
+                //  ABRO EL ARCHIVO PARA LEERLO
+                StreamReader sr = new StreamReader(rutaArchivo, true);
 
-                StreamReader sr = new StreamReader(rutaArchivo);
-
+                //  LEE LINEA Y SEPARA SI DETECTA ";"
                 leerLinea = sr.ReadLine();
                 separarDatos = leerLinea.Split(';');
 
@@ -86,30 +97,26 @@ namespace pryFernandezIES
                     dgrArchivos.Rows.Add(separarDatos);
                 }
 
-                sr.Close();                    
+                //  CIERRO ARCHIVO
+                sr.Close();
+                sr.Dispose();
             }
             catch (Exception)
             {
                 MessageBox.Show("Selecciona un Archivo");
             }
-        }
-        
+        }       
         
         private void btnCargarProveedor_Click(object sender, EventArgs e)
         {
+            //  MUESTRA PANEL NUEVOS PROVEEDORES
             pnlCargarProveedor.Visible = true;
             txtNumero.Focus();
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            frmPrincipal volver = new frmPrincipal();
-            volver.Show();
-            this.Hide();
-        }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
-        {
+        {   
+            //  LIMPIA
             txtNumero.Clear();
             txtEntidad.Clear();
             txtApertura.Clear();
@@ -120,11 +127,23 @@ namespace pryFernandezIES
             txtLiquidador.Clear();
         }
 
-
         private void btnCargar_Click(object sender, EventArgs e)
         {
+            //  CONDICIONES
+            if (treDirectorios.SelectedNode == null)
+            {
+                MessageBox.Show("Selecciona un archivo en donde cargaremos el nuevo Proveedor");
+                return;
+            }
+            if (txtNumero.Text == "" && txtApertura.Text == "" && txtJurisd.Text == "")
+            {
+                MessageBox.Show("Llenar todos los campos");
+                return;
+            }
+
             string archivoSeleccionado = treDirectorios.SelectedNode.FullPath;
 
+            //  CARGO EN ARCHIVO LOS NUEVOS DATOS EN CAMPOS DE TEXTO
             try
             {
                 StreamWriter swManejoArchivo = new StreamWriter(archivoSeleccionado, true);
@@ -136,8 +155,7 @@ namespace pryFernandezIES
                 swManejoArchivo.Write(txtJuzg.Text + ";");
                 swManejoArchivo.Write(txtJurisd.Text + ";");
                 swManejoArchivo.Write(txtDireccion.Text + ";");
-                swManejoArchivo.Write(txtLiquidador.Text + ";");
-                swManejoArchivo.WriteLine();
+                swManejoArchivo.WriteLine(txtLiquidador.Text + ";");
 
                 swManejoArchivo.Close();
 
@@ -289,43 +307,6 @@ namespace pryFernandezIES
             {
                 btnCargar.Focus();
                 e.Handled = true;
-            }
-        }
-
-        private void btnCargar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            string archivoSeleccionado = treDirectorios.SelectedNode.FullPath;
-
-            try
-            {
-                StreamWriter swManejoArchivo = new StreamWriter(archivoSeleccionado, true);
-
-                swManejoArchivo.Write(txtNumero.Text + ";");
-                swManejoArchivo.Write(txtEntidad.Text + ";");
-                swManejoArchivo.Write(txtApertura.Text + ";");
-                swManejoArchivo.Write(txtNumExpediente.Text + ";");
-                swManejoArchivo.Write(txtJuzg.Text + ";");
-                swManejoArchivo.Write(txtJurisd.Text + ";");
-                swManejoArchivo.Write(txtDireccion.Text + ";");
-                swManejoArchivo.Write(txtLiquidador.Text + ";");
-                swManejoArchivo.WriteLine();
-
-                swManejoArchivo.Close();
-
-                MessageBox.Show("Proveedor agregado");
-                txtNumero.Clear();
-                txtEntidad.Clear();
-                txtApertura.Clear();
-                txtNumExpediente.Clear();
-                txtJuzg.Clear();
-                txtJurisd.Clear();
-                txtDireccion.Clear();
-                txtLiquidador.Clear();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("No se econtro el archivo");
-                throw;
             }
         }
     }

@@ -21,38 +21,59 @@ namespace pryFernandezIES
 
         private void btnSeleccionCarpeta_Click(object sender, EventArgs e)
         {
+            //SELECCIONO RUTA DE LA CARPETA
             fbdSeleccionCarpeta.ShowDialog();
-            lblDireccion.Text = fbdSeleccionCarpeta.SelectedPath;          
+            lblDireccion.Text = fbdSeleccionCarpeta.SelectedPath;
+
+            if (btnSeleccionCarpeta.DialogResult == DialogResult.OK || btnSeleccionCarpeta.Enabled == true)
+            {
+                btnGuardar.Enabled = true;
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
-            //  Obtengo la ruta de la carpeta
+            //  CREO VARIABLE CON LA RUTA SELECCIONADA Y CREO VARIABLE NOMBRE DE ARCHIVO .CSV
             string ruta = fbdSeleccionCarpeta.SelectedPath;
-            //  Obtengo el nombre del archivo que quiero crear
-            string nombreArchivo = txtNombreArchivo.Text;
+            string nombreArchivo = txtNombreArchivo.Text + ".csv";
 
-            //  Concateno una barra para que entre a la carpeta para poder crear el archivo mas el nombre con su extension
+
+
+            //  CONCATENO LA RUTA MAS UNA BARRA PARA ENTRAR A LA CARPETA SELECCIONADA Y EL NOMBRE DEL ARCHIVO
             ruta += @"\" + nombreArchivo;
 
-            //  LLamo la variable ruta para crear el archivo con sus propiedades dadas anteriormente
-            StreamWriter ManejoArchivo = new StreamWriter(ruta);
-            //  Cierro el archivo para evitar coaliciones o errores
-            ManejoArchivo.Close();
+            //  CREO LOS CAMPOS EN EL ARCHIVOS .CSV
+            string Numero = "";
+            string Entidad = "";
+            string Apertura = "";
+            string NumExpediente = "";
+            string Juzgado = "";
+            string Juridiccion = "";
+            string Direccion = "";
+            string Liquidador = "";
 
-            if (btnSeleccionCarpeta.DialogResult == DialogResult.OK)
-            {
-                btnGuardar.Enabled = true;
-            }
+            //  ABRO EL ARCHIVO 
+            StreamWriter ManejoArchivo = new StreamWriter(ruta, true);
+           
+            //  LLAMO LOS CAMPOS ANTERIORMENTE CREADOS(se separan con ";")
+            ManejoArchivo.Write(Numero + "N° ;");
+            ManejoArchivo.Write(Entidad + "Entidad ;");
+            ManejoArchivo.Write(Apertura + "APERTURA ;");
+            ManejoArchivo.Write(NumExpediente + "N° EXPTE. ;");
+            ManejoArchivo.Write(Juzgado + "JUZG. ;");
+            ManejoArchivo.Write(Juridiccion + "JURISD. ;");
+            ManejoArchivo.Write(Direccion + "DIRECCION ;");
+            ManejoArchivo.WriteLine(Liquidador + "LIQUIDADOR RESPONSABLE");
+
+            //  CIERRO EL ARCHIVO
+            ManejoArchivo.Close();
+            ManejoArchivo.Dispose();
+
+            // MENSAJE
             MessageBox.Show("Archivo Creado");
             lblDireccion.Text = "";
             txtNombreArchivo.Clear();
-        }
-
-        private void lblDireccion_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -32,7 +32,6 @@ namespace pryFernandezIES
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBuscarProveedor));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.btnNuevoProveedor = new System.Windows.Forms.Button();
             this.btnCargarArchivo = new System.Windows.Forms.Button();
             this.treDirectorios = new System.Windows.Forms.TreeView();
@@ -76,7 +75,6 @@ namespace pryFernandezIES
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.btnVolver);
             this.splitContainer1.Panel1.Controls.Add(this.btnNuevoProveedor);
             this.splitContainer1.Panel1.Controls.Add(this.btnCargarArchivo);
             this.splitContainer1.Panel1.Controls.Add(this.treDirectorios);
@@ -89,19 +87,6 @@ namespace pryFernandezIES
             this.splitContainer1.Size = new System.Drawing.Size(752, 565);
             this.splitContainer1.SplitterDistance = 248;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(60, 483);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(132, 41);
-            this.btnVolver.TabIndex = 3;
-            this.btnVolver.Tag = "";
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnNuevoProveedor
             // 
@@ -338,6 +323,7 @@ namespace pryFernandezIES
             // btnCargar
             // 
             this.btnCargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCargar.Enabled = false;
             this.btnCargar.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargar.Location = new System.Drawing.Point(81, 229);
             this.btnCargar.Name = "btnCargar";
@@ -347,7 +333,7 @@ namespace pryFernandezIES
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = true;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
-            this.btnCargar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnCargar_KeyPress);
+
             // 
             // dgrArchivos
             // 
@@ -409,7 +395,6 @@ namespace pryFernandezIES
         private System.Windows.Forms.Button btnCargarArchivo;
         private System.Windows.Forms.DataGridView dgrArchivos;
         private System.Windows.Forms.Button btnNuevoProveedor;
-        private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Panel pnlCargarProveedor;
         private System.Windows.Forms.TextBox txtNumExpediente;
         private System.Windows.Forms.Label lblNumExpediente;

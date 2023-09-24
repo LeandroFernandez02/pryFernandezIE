@@ -54,7 +54,7 @@ namespace pryFernandezIES
             // 
             // pnlMenu
             // 
-            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(73)))), ((int)(((byte)(123)))));
+            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.pnlMenu.Controls.Add(this.btnBuscarProveedor);
             this.pnlMenu.Controls.Add(this.btnAyuda);
             this.pnlMenu.Controls.Add(this.btnCargarProveedores);
@@ -67,7 +67,7 @@ namespace pryFernandezIES
             // 
             // btnBuscarProveedor
             // 
-            this.btnBuscarProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(42)))), ((int)(((byte)(74)))));
+            this.btnBuscarProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(60)))), ((int)(((byte)(140)))));
             this.btnBuscarProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarProveedor.FlatAppearance.BorderSize = 0;
             this.btnBuscarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -83,7 +83,7 @@ namespace pryFernandezIES
             // 
             // btnAyuda
             // 
-            this.btnAyuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(42)))), ((int)(((byte)(74)))));
+            this.btnAyuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(60)))), ((int)(((byte)(140)))));
             this.btnAyuda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAyuda.FlatAppearance.BorderSize = 0;
             this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -99,7 +99,7 @@ namespace pryFernandezIES
             // 
             // btnCargarProveedores
             // 
-            this.btnCargarProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(42)))), ((int)(((byte)(74)))));
+            this.btnCargarProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(60)))), ((int)(((byte)(140)))));
             this.btnCargarProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCargarProveedores.FlatAppearance.BorderSize = 0;
             this.btnCargarProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -115,7 +115,7 @@ namespace pryFernandezIES
             // 
             // btnClientes
             // 
-            this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(42)))), ((int)(((byte)(74)))));
+            this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(60)))), ((int)(((byte)(140)))));
             this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClientes.FlatAppearance.BorderSize = 0;
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -143,11 +143,11 @@ namespace pryFernandezIES
             // pctLogo
             // 
             this.pctLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pctLogo.Image = global::pryFernandezIES.Properties.Resources.logobbvaBlanco;
-            this.pctLogo.Location = new System.Drawing.Point(-40, -35);
+            this.pctLogo.Image = global::pryFernandezIES.Properties.Resources.fondo_inicioBBVA;
+            this.pctLogo.Location = new System.Drawing.Point(-15, -12);
             this.pctLogo.Name = "pctLogo";
-            this.pctLogo.Size = new System.Drawing.Size(265, 180);
-            this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pctLogo.Size = new System.Drawing.Size(215, 143);
+            this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctLogo.TabIndex = 1;
             this.pctLogo.TabStop = false;
             this.pctLogo.Click += new System.EventHandler(this.pctLogo_Click);
@@ -163,7 +163,7 @@ namespace pryFernandezIES
             // 
             // lblFechaHora
             // 
-            this.lblFechaHora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(73)))), ((int)(((byte)(123)))));
+            this.lblFechaHora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.lblFechaHora.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.lblFechaHora.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaHora.ForeColor = System.Drawing.Color.White;
@@ -191,7 +191,7 @@ namespace pryFernandezIES
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(73)))), ((int)(((byte)(123)))));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
@@ -203,7 +203,7 @@ namespace pryFernandezIES
             // 
             // btnMinimizar
             // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(73)))), ((int)(((byte)(123)))));
+            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.btnMinimizar.BackgroundImage = global::pryFernandezIES.Properties.Resources.minimazar;
             this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -218,7 +218,7 @@ namespace pryFernandezIES
             // 
             // btnCerrar
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(73)))), ((int)(((byte)(123)))));
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.btnCerrar.BackgroundImage = global::pryFernandezIES.Properties.Resources.cerrar;
             this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;

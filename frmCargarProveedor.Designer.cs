@@ -35,14 +35,14 @@ namespace pryFernandezIES
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSeleccionCarpeta = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNombreArchivo
@@ -61,7 +61,6 @@ namespace pryFernandezIES
             this.lblDireccion.Size = new System.Drawing.Size(234, 94);
             this.lblDireccion.TabIndex = 4;
             this.lblDireccion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblDireccion.Click += new System.EventHandler(this.lblDireccion_Click);
             // 
             // label1
             // 
@@ -95,26 +94,6 @@ namespace pryFernandezIES
             this.panel1.Size = new System.Drawing.Size(325, 565);
             this.panel1.TabIndex = 7;
             // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(399, 146);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(267, 44);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Aqui seleccionaras el archivo donde se guardara el proveedor";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::pryFernandezIES.Properties.Resources.numero_2;
-            this.pictureBox2.Location = new System.Drawing.Point(511, 42);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(56, 47);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::pryFernandezIES.Properties.Resources.numero_1;
@@ -139,6 +118,26 @@ namespace pryFernandezIES
             this.btnSeleccionCarpeta.TabIndex = 0;
             this.btnSeleccionCarpeta.UseVisualStyleBackColor = false;
             this.btnSeleccionCarpeta.Click += new System.EventHandler(this.btnSeleccionCarpeta_Click);
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(399, 146);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(267, 44);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Aqui seleccionaras el archivo donde se guardara el proveedor";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::pryFernandezIES.Properties.Resources.numero_2;
+            this.pictureBox2.Location = new System.Drawing.Point(511, 42);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(56, 47);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
             // 
             // btnGuardar
             // 
@@ -171,8 +170,8 @@ namespace pryFernandezIES
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proveedores";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
