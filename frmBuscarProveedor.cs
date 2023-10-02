@@ -149,8 +149,10 @@ namespace pryFernandezIES
         int posicion;
         private void dgrArchivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // INDICE DE LA COLUMNA
             posicion = dgrArchivos.CurrentRow.Index;
 
+            // TRASLADO LOS DATOS DE LA GRILLA A LOS TEXTBOX
             txtNumero.Text = dgrArchivos[0, posicion].Value.ToString();
             txtEntidad.Text = dgrArchivos[1, posicion].Value.ToString();
             txtApertura.Text = dgrArchivos[2, posicion].Value.ToString();
@@ -205,48 +207,62 @@ namespace pryFernandezIES
         private void GuardarCambiosEnCSV()
         {
             string archivoSeleccionado = treDirectorios.SelectedNode.FullPath;
-            // Guardar cambios en el archivo CSV
-            using (StreamWriter writer = new StreamWriter(archivoSeleccionado))
-            {
-                // Escribir las cabeceras de las columnas en el archivo CSV
-                for (int i = 0; i < dgrArchivos.Columns.Count; i++)
-                {
-                    writer.Write(dgrArchivos.Columns[i].HeaderText);
-                    if (i < dgrArchivos.Columns.Count - 1)
-                    {
-                        writer.Write(";");
-                    }
-                    else
-                    {
-                        writer.WriteLine(); // Agrega una línea en blanco al final de las cabeceras
-                    }
-                }
+            
+            StreamWriter swGuardar = new StreamWriter(archivoSeleccionado);
 
-                // Escribir los datos de las filas en el archivo CSV
-                foreach (DataGridViewRow row in dgrArchivos.Rows)
+            // ESCRIBIR LOS CAMPOS DE LAS COLUMNAS EN EL ARCHIVO
+            for (int i = 0; i < dgrArchivos.Columns.Count; i++)
+            {
+                swGuardar.Write(dgrArchivos.Columns[i].HeaderText);
+                if (i < dgrArchivos.Columns.Count - 1)
                 {
-                    if (!row.IsNewRow) // Evita escribir la fila nueva del DataGridView
+                    swGuardar.Write(";");
+                }
+                else
+                {
+                    swGuardar.WriteLine(); // Agrega una línea en blanco al final de las cabeceras
+                }
+            }
+
+            // ESCRIBIR LAS FILAS EN EL ARCHIVO
+            foreach (DataGridViewRow row in dgrArchivos.Rows)
+            {
+                if (!row.IsNewRow) // NO ESCRIBE LINEA EN BLANCO NUEVA
+                {
+                    for (int i = 0; i < dgrArchivos.Columns.Count; i++)
                     {
-                        for (int i = 0; i < dgrArchivos.Columns.Count; i++)
+                        swGuardar.Write(row.Cells[i].Value);
+                        if (i < dgrArchivos.Columns.Count - 1)
                         {
-                            writer.Write(row.Cells[i].Value);
-                            if (i < dgrArchivos.Columns.Count - 1)
-                            {
-                                writer.Write(";");
-                            }
-                            else
-                            {
-                                writer.WriteLine(); // Agrega una línea en blanco al final de cada fila
-                            }
+                            swGuardar.Write(";");
+                        }
+                        else
+                        {
+                            swGuardar.WriteLine(); // AGREGA LINEA EN BLANCO DESPUES DE CADA FILA
                         }
                     }
                 }
             }
+            swGuardar.Close();
+            swGuardar.Dispose();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             limpiar();
+        }
+        void limpiar()
+        {
+            //  LIMPIA
+            txtNumero.Clear();
+            txtEntidad.Clear();
+            txtApertura.Clear();
+            txtNumExpediente.Clear();
+            txtJuzg.Clear();
+            txtJurisd.Clear();
+            txtDireccion.Clear();
+            txtLiquidador.Clear();
+            dgrArchivos.ClearSelection();
         }
 
         //  CONDICIONALES
@@ -381,19 +397,5 @@ namespace pryFernandezIES
                 e.Handled = true;
             }
         }   
-        
-        void limpiar()
-        {
-            //  LIMPIA
-            txtNumero.Clear();
-            txtEntidad.Clear();
-            txtApertura.Clear();
-            txtNumExpediente.Clear();
-            txtJuzg.Clear();
-            txtJurisd.Clear();
-            txtDireccion.Clear();
-            txtLiquidador.Clear();
-            dgrArchivos.ClearSelection();
-        }
     }
 }
