@@ -59,6 +59,12 @@
     <Compile Include="frmBuscarProveedor.Designer.cs">
       <DependentUpon>frmBuscarProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCargaPrograma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCargaPrograma.Designer.cs">
+      <DependentUpon>frmCargaPrograma.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarProveedor.resx">
       <DependentUpon>frmBuscarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCargaPrograma.resx">
+      <DependentUpon>frmCargaPrograma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
@@ -176,6 +185,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cerrar-PhotoRoom.png-PhotoRoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\numero-1 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\numero-2 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cargando.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cargando-unscreen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading-49.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading-26.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle-1700_512.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

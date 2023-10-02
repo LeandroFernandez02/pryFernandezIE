@@ -18,14 +18,16 @@ namespace pryFernandezIES
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        { 
-            //Control OpenFileDialog
+        {
+            // pctInicio.Image = Image.FromFile(@"C:\Users\Leandro\Videos\videos editados\0926.mp4");
+            // pctInicio.SizeMode = PictureBoxSizeMode.StretchImage;
+            // Control OpenFileDialog
             //   "    OpenFoulderDialog
         }
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            frmPrincipal principal = new frmPrincipal();
+            frmCargaPrograma principal = new frmCargaPrograma();
             principal.Show();
             this.Hide();
         }

@@ -45,6 +45,10 @@ namespace pryFernandezIES
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
+            // fbdSeleccionCarpeta
+            // 
+            this.fbdSeleccionCarpeta.SelectedPath = "E:\\Pupi\\Primer Año\\Semestre 2\\Parciales\\pryFernandezIE\\bin\\Debug\\Proveedores";
+            // 
             // txtNombreArchivo
             // 
             this.txtNombreArchivo.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -96,10 +100,10 @@ namespace pryFernandezIES
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::pryFernandezIES.Properties.Resources.numero_1;
-            this.pictureBox1.Location = new System.Drawing.Point(129, 42);
+            this.pictureBox1.Image = global::pryFernandezIES.Properties.Resources.numero_1__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(138, 42);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 47);
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -131,10 +135,10 @@ namespace pryFernandezIES
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::pryFernandezIES.Properties.Resources.numero_2;
-            this.pictureBox2.Location = new System.Drawing.Point(511, 42);
+            this.pictureBox2.Image = global::pryFernandezIES.Properties.Resources.numero_2__1_;
+            this.pictureBox2.Location = new System.Drawing.Point(508, 42);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(56, 47);
+            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;

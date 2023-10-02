@@ -8,11 +8,10 @@ namespace pryFernandezIES
     {
         public frmBuscarProveedor()
         {
-            InitializeComponent();
-            
+            InitializeComponent();   
         }
-        //SABER EXPLICAR TODO EL PROCESO 
-        
+
+        //CREA TREVIEW
         private void frmBuscarProveedor_Load(object sender, EventArgs e)
         {
             //  CREO VARIABLE RUTA
@@ -49,16 +48,18 @@ namespace pryFernandezIES
             return newNode;
         }
 
-
-        //  VARIABLES PARA LUEGO USAR EN GRILLA
-        string leerLinea;
-        string[] separarDatos;
-
         //  CARGA DE GRILLA
-        private void btnCargarArchivo_Click(object sender, EventArgs e)
+        private void btnMostrarProveedor_Click(object sender, EventArgs e)
         {
+            string leerLinea;
+            string[] separarDatos;
             try
             {
+                btnNuevoProveedor.Visible = true;
+                btnModificarProveedor.Visible = true;
+                btnEliminarProveedor.Visible = true;
+                btnLimpiar.Visible = true;
+                pnlCargarProveedor.Visible = true;
                 dgrArchivos.Rows.Clear();
                 dgrArchivos.Columns.Clear();
 
@@ -67,11 +68,6 @@ namespace pryFernandezIES
                     MessageBox.Show("Selecciona un archivo para cargar la grilla");
                     return;
                 }
-                else if(btnCargarArchivo.Enabled = true && treDirectorios.SelectedNode != null)
-                {
-                    btnCargar.Enabled = true;
-                }
-
                 //  CREO VARIABLES CON LA RUTA SELECCIONADA EN EL TREVIEW
                 string rutaArchivo = Convert.ToString(treDirectorios.SelectedNode.FullPath);
                 string nombreArchivo = Convert.ToString(treDirectorios.SelectedNode.Name);
@@ -107,73 +103,150 @@ namespace pryFernandezIES
             }
         }       
         
-        private void btnCargarProveedor_Click(object sender, EventArgs e)
-        {
-            //  MUESTRA PANEL NUEVOS PROVEEDORES
-            pnlCargarProveedor.Visible = true;
-            txtNumero.Focus();
-        }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {   
-            //  LIMPIA
-            txtNumero.Clear();
-            txtEntidad.Clear();
-            txtApertura.Clear();
-            txtNumExpediente.Clear();
-            txtJuzg.Clear();
-            txtJurisd.Clear();
-            txtDireccion.Clear();
-            txtLiquidador.Clear();
-        }
-
-        private void btnCargar_Click(object sender, EventArgs e)
+        // AGREGAR
+        private void btnNuevoProveedor_Click(object sender, EventArgs e)
         {
             //  CONDICIONES
-            if (treDirectorios.SelectedNode == null)
-            {
-                MessageBox.Show("Selecciona un archivo en donde cargaremos el nuevo Proveedor");
-                return;
-            }
-            if (txtNumero.Text == "" && txtApertura.Text == "" && txtJurisd.Text == "")
+            if (txtNumero.Text == "" && txtEntidad.Text == "" && txtApertura.Text == "" && txtNumExpediente.Text== "" && txtJuzg.Text == "" && txtJurisd.Text == "" && txtDireccion.Text == "" && txtLiquidador.Text == "")
             {
                 MessageBox.Show("Llenar todos los campos");
                 return;
             }
 
-            string archivoSeleccionado = treDirectorios.SelectedNode.FullPath;
 
             //  CARGO EN ARCHIVO LOS NUEVOS DATOS EN CAMPOS DE TEXTO
+            
             try
             {
-                StreamWriter swManejoArchivo = new StreamWriter(archivoSeleccionado, true);
-               
-                swManejoArchivo.Write(txtNumero.Text + ";");
-                swManejoArchivo.Write(txtEntidad.Text + ";");
-                swManejoArchivo.Write(txtApertura.Text + ";");
-                swManejoArchivo.Write(txtNumExpediente.Text + ";");
-                swManejoArchivo.Write(txtJuzg.Text + ";");
-                swManejoArchivo.Write(txtJurisd.Text + ";");
-                swManejoArchivo.Write(txtDireccion.Text + ";");
-                swManejoArchivo.WriteLine(txtLiquidador.Text + ";");
+                string archivoSeleccionado = treDirectorios.SelectedNode.FullPath;
 
-                swManejoArchivo.Close();
+                StreamWriter swNuevo = new StreamWriter(archivoSeleccionado, true);
 
+                swNuevo.Write(txtNumero.Text + ";");
+                swNuevo.Write(txtEntidad.Text + ";");
+                swNuevo.Write(txtApertura.Text + ";");
+                swNuevo.Write(txtNumExpediente.Text + ";");
+                swNuevo.Write(txtJuzg.Text + ";");
+                swNuevo.Write(txtJurisd.Text + ";");
+                swNuevo.Write(txtDireccion.Text + ";");
+                swNuevo.WriteLine(txtLiquidador.Text + ";");
+
+                
+                swNuevo.Close();
+                swNuevo.Dispose();
+                
                 MessageBox.Show("Proveedor agregado");
-                txtNumero.Clear();
-                txtEntidad.Clear();
-                txtApertura.Clear();
-                txtNumExpediente.Clear();
-                txtJuzg.Clear();
-                txtJurisd.Clear();
-                txtDireccion.Clear();
-                txtLiquidador.Clear();
+                limpiar();
             }
             catch (Exception)
             {
                 MessageBox.Show("No se econtro el archivo");
-                throw;
             }
+            
+        }
+
+        // SELECCION EN GRILLA
+        int posicion;
+        private void dgrArchivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            posicion = dgrArchivos.CurrentRow.Index;
+
+            txtNumero.Text = dgrArchivos[0, posicion].Value.ToString();
+            txtEntidad.Text = dgrArchivos[1, posicion].Value.ToString();
+            txtApertura.Text = dgrArchivos[2, posicion].Value.ToString();
+            txtNumExpediente.Text = dgrArchivos[3, posicion].Value.ToString();
+            txtJuzg.Text = dgrArchivos[4, posicion].Value.ToString();
+            txtJurisd.Text = dgrArchivos[5, posicion].Value.ToString();
+            txtDireccion.Text = dgrArchivos[6, posicion].Value.ToString();
+            txtLiquidador.Text = dgrArchivos[7, posicion].Value.ToString();
+        }
+
+        // MODIFICAR
+        private void btnModificarProveedor_Click(object sender, EventArgs e)
+        {
+            string archivoSeleccionado = treDirectorios.SelectedNode.FullPath;
+            
+            StreamWriter swModificar = new StreamWriter(archivoSeleccionado, true);
+
+            dgrArchivos[0, posicion].Value = txtNumero.Text;
+            dgrArchivos[1, posicion].Value = txtEntidad.Text;
+            dgrArchivos[2, posicion].Value = txtApertura.Text;
+            dgrArchivos[3, posicion].Value = txtNumExpediente.Text;
+            dgrArchivos[4, posicion].Value = txtJuzg.Text;
+            dgrArchivos[5, posicion].Value = txtJurisd.Text;
+            dgrArchivos[6, posicion].Value = txtDireccion.Text;
+            dgrArchivos[7, posicion].Value = txtLiquidador.Text;
+
+            limpiar();
+            txtNumero.Focus();
+
+            swModificar.Close();
+            swModificar.Dispose();
+            GuardarCambiosEnCSV();
+        }
+
+        // BORRAR
+        private void btnEliminarProveedor_Click(object sender, EventArgs e)
+        {
+            string archivoSeleccionado = treDirectorios.SelectedNode.FullPath;
+
+            StreamWriter swEliminar = new StreamWriter(archivoSeleccionado, true);
+
+            dgrArchivos.Rows.RemoveAt(posicion);
+            limpiar();
+            txtNumero.Focus();
+
+            swEliminar.Close();
+            swEliminar.Dispose();
+            GuardarCambiosEnCSV();
+        }
+
+        // ACTUALIZAR .CSV
+        private void GuardarCambiosEnCSV()
+        {
+            string archivoSeleccionado = treDirectorios.SelectedNode.FullPath;
+            // Guardar cambios en el archivo CSV
+            using (StreamWriter writer = new StreamWriter(archivoSeleccionado))
+            {
+                // Escribir las cabeceras de las columnas en el archivo CSV
+                for (int i = 0; i < dgrArchivos.Columns.Count; i++)
+                {
+                    writer.Write(dgrArchivos.Columns[i].HeaderText);
+                    if (i < dgrArchivos.Columns.Count - 1)
+                    {
+                        writer.Write(";");
+                    }
+                    else
+                    {
+                        writer.WriteLine(); // Agrega una línea en blanco al final de las cabeceras
+                    }
+                }
+
+                // Escribir los datos de las filas en el archivo CSV
+                foreach (DataGridViewRow row in dgrArchivos.Rows)
+                {
+                    if (!row.IsNewRow) // Evita escribir la fila nueva del DataGridView
+                    {
+                        for (int i = 0; i < dgrArchivos.Columns.Count; i++)
+                        {
+                            writer.Write(row.Cells[i].Value);
+                            if (i < dgrArchivos.Columns.Count - 1)
+                            {
+                                writer.Write(";");
+                            }
+                            else
+                            {
+                                writer.WriteLine(); // Agrega una línea en blanco al final de cada fila
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiar();
         }
 
         //  CONDICIONALES
@@ -305,9 +378,22 @@ namespace pryFernandezIES
 
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                btnCargar.Focus();
                 e.Handled = true;
             }
+        }   
+        
+        void limpiar()
+        {
+            //  LIMPIA
+            txtNumero.Clear();
+            txtEntidad.Clear();
+            txtApertura.Clear();
+            txtNumExpediente.Clear();
+            txtJuzg.Clear();
+            txtJurisd.Clear();
+            txtDireccion.Clear();
+            txtLiquidador.Clear();
+            dgrArchivos.ClearSelection();
         }
     }
 }

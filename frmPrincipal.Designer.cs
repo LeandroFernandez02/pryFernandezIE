@@ -37,24 +37,24 @@ namespace pryFernandezIES
             this.btnCargarProveedores = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
-            this.pctLogo = new System.Windows.Forms.PictureBox();
             this.pnlFormHijo = new System.Windows.Forms.Panel();
             this.lblFechaHora = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.horaFecha = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pctLogo = new System.Windows.Forms.PictureBox();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.pnlFormHijo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
             // 
-            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
+            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(32)))), ((int)(((byte)(70)))));
             this.pnlMenu.Controls.Add(this.btnBuscarProveedor);
             this.pnlMenu.Controls.Add(this.btnAyuda);
             this.pnlMenu.Controls.Add(this.btnCargarProveedores);
@@ -140,18 +140,6 @@ namespace pryFernandezIES
             this.pnlLogo.Size = new System.Drawing.Size(200, 100);
             this.pnlLogo.TabIndex = 0;
             // 
-            // pctLogo
-            // 
-            this.pctLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pctLogo.Image = global::pryFernandezIES.Properties.Resources.fondo_inicioBBVA;
-            this.pctLogo.Location = new System.Drawing.Point(-15, -12);
-            this.pctLogo.Name = "pctLogo";
-            this.pctLogo.Size = new System.Drawing.Size(215, 143);
-            this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctLogo.TabIndex = 1;
-            this.pctLogo.TabStop = false;
-            this.pctLogo.Click += new System.EventHandler(this.pctLogo_Click);
-            // 
             // pnlFormHijo
             // 
             this.pnlFormHijo.Controls.Add(this.lblFechaHora);
@@ -163,7 +151,7 @@ namespace pryFernandezIES
             // 
             // lblFechaHora
             // 
-            this.lblFechaHora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
+            this.lblFechaHora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(32)))), ((int)(((byte)(70)))));
             this.lblFechaHora.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.lblFechaHora.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaHora.ForeColor = System.Drawing.Color.White;
@@ -173,17 +161,6 @@ namespace pryFernandezIES
             this.lblFechaHora.TabIndex = 2;
             this.lblFechaHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::pryFernandezIES.Properties.Resources.imgLogoSeguro;
-            this.pictureBox1.Location = new System.Drawing.Point(164, 108);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(427, 185);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // horaFecha
             // 
             this.horaFecha.Enabled = true;
@@ -191,7 +168,7 @@ namespace pryFernandezIES
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(32)))), ((int)(((byte)(70)))));
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
@@ -203,7 +180,7 @@ namespace pryFernandezIES
             // 
             // btnMinimizar
             // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
+            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(32)))), ((int)(((byte)(70)))));
             this.btnMinimizar.BackgroundImage = global::pryFernandezIES.Properties.Resources.minimazar;
             this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -218,7 +195,7 @@ namespace pryFernandezIES
             // 
             // btnCerrar
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(32)))), ((int)(((byte)(70)))));
             this.btnCerrar.BackgroundImage = global::pryFernandezIES.Properties.Resources.cerrar;
             this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -230,6 +207,29 @@ namespace pryFernandezIES
             this.btnCerrar.TabIndex = 3;
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::pryFernandezIES.Properties.Resources.imgLogoSeguro;
+            this.pictureBox1.Location = new System.Drawing.Point(164, 108);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(427, 185);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pctLogo
+            // 
+            this.pctLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pctLogo.Image = global::pryFernandezIES.Properties.Resources.fondo_inicioBBVA;
+            this.pctLogo.Location = new System.Drawing.Point(-15, -12);
+            this.pctLogo.Name = "pctLogo";
+            this.pctLogo.Size = new System.Drawing.Size(215, 143);
+            this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctLogo.TabIndex = 1;
+            this.pctLogo.TabStop = false;
+            this.pctLogo.Click += new System.EventHandler(this.pctLogo_Click);
             // 
             // frmPrincipal
             // 
@@ -249,9 +249,9 @@ namespace pryFernandezIES
             this.Text = "Principal";
             this.pnlMenu.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             this.pnlFormHijo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             this.ResumeLayout(false);
 
         }

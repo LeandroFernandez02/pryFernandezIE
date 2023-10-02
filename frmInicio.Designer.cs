@@ -33,8 +33,8 @@ namespace pryFernandezIES
             this.btnIniciar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pctInicio = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pctInicio)).BeginInit();
             this.SuspendLayout();
             // 
             // btnIniciar
@@ -56,7 +56,7 @@ namespace pryFernandezIES
             // 
             // btnCerrar
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(32)))), ((int)(((byte)(70)))));
             this.btnCerrar.BackgroundImage = global::pryFernandezIES.Properties.Resources.cerrar;
             this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -71,7 +71,7 @@ namespace pryFernandezIES
             // 
             // btnMinimizar
             // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
+            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(32)))), ((int)(((byte)(70)))));
             this.btnMinimizar.BackgroundImage = global::pryFernandezIES.Properties.Resources.minimazar;
             this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -84,15 +84,15 @@ namespace pryFernandezIES
             this.btnMinimizar.UseVisualStyleBackColor = false;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
-            // pictureBox1
+            // pctInicio
             // 
-            this.pictureBox1.Image = global::pryFernandezIES.Properties.Resources.logo_bbva_fondo_2;
-            this.pictureBox1.Location = new System.Drawing.Point(-49, -64);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1035, 664);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.pctInicio.Image = global::pryFernandezIES.Properties.Resources.logo_bbva_fondo_2;
+            this.pctInicio.Location = new System.Drawing.Point(-49, -64);
+            this.pctInicio.Name = "pctInicio";
+            this.pctInicio.Size = new System.Drawing.Size(1035, 664);
+            this.pctInicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctInicio.TabIndex = 3;
+            this.pctInicio.TabStop = false;
             // 
             // frmInicio
             // 
@@ -104,21 +104,21 @@ namespace pryFernandezIES
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnIniciar);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pctInicio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Ventas Seguro";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctInicio)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button btnIniciar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pctInicio;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnCerrar;
     }

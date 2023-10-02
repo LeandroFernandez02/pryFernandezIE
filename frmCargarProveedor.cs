@@ -33,38 +33,25 @@ namespace pryFernandezIES
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
             //  CREO VARIABLE CON LA RUTA SELECCIONADA Y CREO VARIABLE NOMBRE DE ARCHIVO .CSV
             string ruta = fbdSeleccionCarpeta.SelectedPath;
             string nombreArchivo = txtNombreArchivo.Text + ".csv";
 
-
-
             //  CONCATENO LA RUTA MAS UNA BARRA PARA ENTRAR A LA CARPETA SELECCIONADA Y EL NOMBRE DEL ARCHIVO
-            ruta += @"\" + nombreArchivo;
-
-            //  CREO LOS CAMPOS EN EL ARCHIVOS .CSV
-            string Numero = "";
-            string Entidad = "";
-            string Apertura = "";
-            string NumExpediente = "";
-            string Juzgado = "";
-            string Juridiccion = "";
-            string Direccion = "";
-            string Liquidador = "";
+            ruta += @"\" + nombreArchivo;         
 
             //  ABRO EL ARCHIVO 
-            StreamWriter ManejoArchivo = new StreamWriter(ruta, true);
+            StreamWriter ManejoArchivo = new StreamWriter(ruta, false);
            
             //  LLAMO LOS CAMPOS ANTERIORMENTE CREADOS(se separan con ";")
-            ManejoArchivo.Write(Numero + "N° ;");
-            ManejoArchivo.Write(Entidad + "Entidad ;");
-            ManejoArchivo.Write(Apertura + "APERTURA ;");
-            ManejoArchivo.Write(NumExpediente + "N° EXPTE. ;");
-            ManejoArchivo.Write(Juzgado + "JUZG. ;");
-            ManejoArchivo.Write(Juridiccion + "JURISD. ;");
-            ManejoArchivo.Write(Direccion + "DIRECCION ;");
-            ManejoArchivo.WriteLine(Liquidador + "LIQUIDADOR RESPONSABLE");
+            ManejoArchivo.Write("N° ;");
+            ManejoArchivo.Write("Entidad ;");
+            ManejoArchivo.Write("APERTURA ;");
+            ManejoArchivo.Write("N° EXPTE. ;");
+            ManejoArchivo.Write("JUZG. ;");
+            ManejoArchivo.Write("JURISD. ;");
+            ManejoArchivo.Write("DIRECCION ;");
+            ManejoArchivo.WriteLine("LIQUIDADOR RESPONSABLE");
 
             //  CIERRO EL ARCHIVO
             ManejoArchivo.Close();

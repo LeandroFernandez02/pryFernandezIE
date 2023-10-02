@@ -32,8 +32,11 @@ namespace pryFernandezIES
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBuscarProveedor));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnEliminarProveedor = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnModificarProveedor = new System.Windows.Forms.Button();
             this.btnNuevoProveedor = new System.Windows.Forms.Button();
-            this.btnCargarArchivo = new System.Windows.Forms.Button();
+            this.btnMostrarProveedor = new System.Windows.Forms.Button();
             this.treDirectorios = new System.Windows.Forms.TreeView();
             this.pnlCargarProveedor = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -53,8 +56,6 @@ namespace pryFernandezIES
             this.lblJuzg = new System.Windows.Forms.Label();
             this.lblNumExpediente = new System.Windows.Forms.Label();
             this.txtNumExpediente = new System.Windows.Forms.TextBox();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnCargar = new System.Windows.Forms.Button();
             this.dgrArchivos = new System.Windows.Forms.DataGridView();
             this.btnCargarProveedor = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -75,8 +76,11 @@ namespace pryFernandezIES
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnEliminarProveedor);
+            this.splitContainer1.Panel1.Controls.Add(this.btnLimpiar);
+            this.splitContainer1.Panel1.Controls.Add(this.btnModificarProveedor);
             this.splitContainer1.Panel1.Controls.Add(this.btnNuevoProveedor);
-            this.splitContainer1.Panel1.Controls.Add(this.btnCargarArchivo);
+            this.splitContainer1.Panel1.Controls.Add(this.btnMostrarProveedor);
             this.splitContainer1.Panel1.Controls.Add(this.treDirectorios);
             // 
             // splitContainer1.Panel2
@@ -88,30 +92,93 @@ namespace pryFernandezIES
             this.splitContainer1.SplitterDistance = 248;
             this.splitContainer1.TabIndex = 0;
             // 
+            // btnEliminarProveedor
+            // 
+            this.btnEliminarProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(60)))), ((int)(((byte)(140)))));
+            this.btnEliminarProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminarProveedor.FlatAppearance.BorderSize = 0;
+            this.btnEliminarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarProveedor.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarProveedor.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarProveedor.Location = new System.Drawing.Point(40, 450);
+            this.btnEliminarProveedor.Name = "btnEliminarProveedor";
+            this.btnEliminarProveedor.Size = new System.Drawing.Size(161, 41);
+            this.btnEliminarProveedor.TabIndex = 4;
+            this.btnEliminarProveedor.Tag = "";
+            this.btnEliminarProveedor.Text = "Eliminar Proveedor";
+            this.btnEliminarProveedor.UseVisualStyleBackColor = false;
+            this.btnEliminarProveedor.Visible = false;
+            this.btnEliminarProveedor.Click += new System.EventHandler(this.btnEliminarProveedor_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(60)))), ((int)(((byte)(140)))));
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(40, 497);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(161, 41);
+            this.btnLimpiar.TabIndex = 14;
+            this.btnLimpiar.Tag = "";
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Visible = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnModificarProveedor
+            // 
+            this.btnModificarProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(60)))), ((int)(((byte)(140)))));
+            this.btnModificarProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificarProveedor.FlatAppearance.BorderSize = 0;
+            this.btnModificarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarProveedor.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarProveedor.ForeColor = System.Drawing.Color.White;
+            this.btnModificarProveedor.Location = new System.Drawing.Point(40, 403);
+            this.btnModificarProveedor.Name = "btnModificarProveedor";
+            this.btnModificarProveedor.Size = new System.Drawing.Size(161, 41);
+            this.btnModificarProveedor.TabIndex = 3;
+            this.btnModificarProveedor.Tag = "";
+            this.btnModificarProveedor.Text = "Modificar Proveedor";
+            this.btnModificarProveedor.UseVisualStyleBackColor = false;
+            this.btnModificarProveedor.Visible = false;
+            this.btnModificarProveedor.Click += new System.EventHandler(this.btnModificarProveedor_Click);
+            // 
             // btnNuevoProveedor
             // 
+            this.btnNuevoProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(60)))), ((int)(((byte)(140)))));
             this.btnNuevoProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoProveedor.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoProveedor.Location = new System.Drawing.Point(60, 368);
+            this.btnNuevoProveedor.FlatAppearance.BorderSize = 0;
+            this.btnNuevoProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoProveedor.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoProveedor.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoProveedor.Location = new System.Drawing.Point(40, 356);
             this.btnNuevoProveedor.Name = "btnNuevoProveedor";
-            this.btnNuevoProveedor.Size = new System.Drawing.Size(132, 41);
+            this.btnNuevoProveedor.Size = new System.Drawing.Size(161, 41);
             this.btnNuevoProveedor.TabIndex = 2;
             this.btnNuevoProveedor.Tag = "";
             this.btnNuevoProveedor.Text = "Nuevo Proveedor";
-            this.btnNuevoProveedor.UseVisualStyleBackColor = true;
-            this.btnNuevoProveedor.Click += new System.EventHandler(this.btnCargarProveedor_Click);
+            this.btnNuevoProveedor.UseVisualStyleBackColor = false;
+            this.btnNuevoProveedor.Visible = false;
+            this.btnNuevoProveedor.Click += new System.EventHandler(this.btnNuevoProveedor_Click);
             // 
-            // btnCargarArchivo
+            // btnMostrarProveedor
             // 
-            this.btnCargarArchivo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCargarArchivo.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargarArchivo.Location = new System.Drawing.Point(60, 321);
-            this.btnCargarArchivo.Name = "btnCargarArchivo";
-            this.btnCargarArchivo.Size = new System.Drawing.Size(132, 41);
-            this.btnCargarArchivo.TabIndex = 1;
-            this.btnCargarArchivo.Text = "Cargar Archivo";
-            this.btnCargarArchivo.UseVisualStyleBackColor = true;
-            this.btnCargarArchivo.Click += new System.EventHandler(this.btnCargarArchivo_Click);
+            this.btnMostrarProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(60)))), ((int)(((byte)(140)))));
+            this.btnMostrarProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMostrarProveedor.FlatAppearance.BorderSize = 0;
+            this.btnMostrarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMostrarProveedor.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostrarProveedor.ForeColor = System.Drawing.Color.White;
+            this.btnMostrarProveedor.Location = new System.Drawing.Point(40, 309);
+            this.btnMostrarProveedor.Name = "btnMostrarProveedor";
+            this.btnMostrarProveedor.Size = new System.Drawing.Size(161, 41);
+            this.btnMostrarProveedor.TabIndex = 1;
+            this.btnMostrarProveedor.Text = "Mostrar Proveedor";
+            this.btnMostrarProveedor.UseVisualStyleBackColor = false;
+            this.btnMostrarProveedor.Click += new System.EventHandler(this.btnMostrarProveedor_Click);
             // 
             // treDirectorios
             // 
@@ -124,12 +191,11 @@ namespace pryFernandezIES
             // pnlCargarProveedor
             // 
             this.pnlCargarProveedor.Controls.Add(this.groupBox1);
-            this.pnlCargarProveedor.Controls.Add(this.btnLimpiar);
-            this.pnlCargarProveedor.Controls.Add(this.btnCargar);
             this.pnlCargarProveedor.Location = new System.Drawing.Point(7, 292);
             this.pnlCargarProveedor.Name = "pnlCargarProveedor";
-            this.pnlCargarProveedor.Size = new System.Drawing.Size(481, 266);
+            this.pnlCargarProveedor.Size = new System.Drawing.Size(481, 270);
             this.pnlCargarProveedor.TabIndex = 2;
+            this.pnlCargarProveedor.Visible = false;
             // 
             // groupBox1
             // 
@@ -149,9 +215,9 @@ namespace pryFernandezIES
             this.groupBox1.Controls.Add(this.lblJuzg);
             this.groupBox1.Controls.Add(this.lblNumExpediente);
             this.groupBox1.Controls.Add(this.txtNumExpediente);
-            this.groupBox1.Location = new System.Drawing.Point(38, 3);
+            this.groupBox1.Location = new System.Drawing.Point(42, 17);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(398, 224);
+            this.groupBox1.Size = new System.Drawing.Size(398, 229);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             // 
@@ -307,41 +373,15 @@ namespace pryFernandezIES
             this.txtNumExpediente.TabIndex = 7;
             this.txtNumExpediente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumExpediente_KeyPress);
             // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(274, 229);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(111, 30);
-            this.btnLimpiar.TabIndex = 14;
-            this.btnLimpiar.Tag = "";
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // btnCargar
-            // 
-            this.btnCargar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCargar.Enabled = false;
-            this.btnCargar.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.Location = new System.Drawing.Point(81, 229);
-            this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(111, 30);
-            this.btnCargar.TabIndex = 4;
-            this.btnCargar.Tag = "";
-            this.btnCargar.Text = "Cargar";
-            this.btnCargar.UseVisualStyleBackColor = true;
-            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
-
-            // 
             // dgrArchivos
             // 
             this.dgrArchivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrArchivos.Location = new System.Drawing.Point(7, 3);
             this.dgrArchivos.Name = "dgrArchivos";
+            this.dgrArchivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgrArchivos.Size = new System.Drawing.Size(481, 283);
             this.dgrArchivos.TabIndex = 1;
+            this.dgrArchivos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrArchivos_CellContentClick);
             // 
             // btnCargarProveedor
             // 
@@ -353,7 +393,7 @@ namespace pryFernandezIES
             this.btnCargarProveedor.Tag = "";
             this.btnCargarProveedor.Text = "Nuevo Proveedor";
             this.btnCargarProveedor.UseVisualStyleBackColor = true;
-            this.btnCargarProveedor.Click += new System.EventHandler(this.btnCargarProveedor_Click);
+            this.btnCargarProveedor.Click += new System.EventHandler(this.btnNuevoProveedor_Click);
             // 
             // imageList1
             // 
@@ -392,7 +432,7 @@ namespace pryFernandezIES
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TreeView treDirectorios;
-        private System.Windows.Forms.Button btnCargarArchivo;
+        private System.Windows.Forms.Button btnMostrarProveedor;
         private System.Windows.Forms.DataGridView dgrArchivos;
         private System.Windows.Forms.Button btnNuevoProveedor;
         private System.Windows.Forms.Panel pnlCargarProveedor;
@@ -404,7 +444,6 @@ namespace pryFernandezIES
         private System.Windows.Forms.Label lblEntidad;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label lblNumero;
-        private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.TextBox txtJuzg;
@@ -417,5 +456,7 @@ namespace pryFernandezIES
         private System.Windows.Forms.Label lblJurisd;
         private System.Windows.Forms.Button btnCargarProveedor;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button btnEliminarProveedor;
+        private System.Windows.Forms.Button btnModificarProveedor;
     }
 }
