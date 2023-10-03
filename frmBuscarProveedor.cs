@@ -8,7 +8,7 @@ namespace pryFernandezIES
     {
         public frmBuscarProveedor()
         {
-            InitializeComponent();   
+            InitializeComponent();
         }
 
         //CREA TREVIEW
@@ -26,31 +26,32 @@ namespace pryFernandezIES
             treDirectorios.Nodes.Add(crearArbol(rutaBase));
         }
 
-        // CREO UNA CLASE PARA CARGAR EL TREVIEW
+        // CREO UNA METODO PARA CARGAR EL TREVIEW
         private TreeNode crearArbol(DirectoryInfo rutaBase)
         {
             //  CREA UN NODO CON LA RUTABASE
             TreeNode newNode = new TreeNode(rutaBase.Name);
 
             //RECORRE LOS DIRECTORIOS
-            foreach(var item in rutaBase.GetDirectories())
-            {            
+            foreach (var dir in rutaBase.GetDirectories())
+            {
                 //INICIA RECURSIVIDAD
-                newNode.Nodes.Add(crearArbol(item));
+                newNode.Nodes.Add(crearArbol(dir));
             }
 
             //RECORRE LOS ARCHIVOS
-            foreach (var item in rutaBase.GetFiles())
-            {          
-                newNode.Nodes.Add(new TreeNode(item.Name));               
+            foreach (var file in rutaBase.GetFiles())
+            {
+                newNode.Nodes.Add(new TreeNode(file.Name));
             }
-            
+
             return newNode;
         }
 
         //  CARGA DE GRILLA
         private void btnMostrarProveedor_Click(object sender, EventArgs e)
         {
+            limpiar();
             string leerLinea;
             string[] separarDatos;
             try
@@ -101,13 +102,13 @@ namespace pryFernandezIES
             {
                 MessageBox.Show("Selecciona un Archivo");
             }
-        }       
-        
+        }
+
         // AGREGAR
         private void btnNuevoProveedor_Click(object sender, EventArgs e)
         {
             //  CONDICIONES
-            if (txtNumero.Text == "" && txtEntidad.Text == "" && txtApertura.Text == "" && txtNumExpediente.Text== "" && txtJuzg.Text == "" && txtJurisd.Text == "" && txtDireccion.Text == "" && txtLiquidador.Text == "")
+            if (txtNumero.Text == "" && txtEntidad.Text == "" && txtApertura.Text == "" && txtNumExpediente.Text == "" && txtJuzg.Text == "" && txtJurisd.Text == "" && txtDireccion.Text == "" && txtLiquidador.Text == "")
             {
                 MessageBox.Show("Llenar todos los campos");
                 return;
@@ -115,7 +116,7 @@ namespace pryFernandezIES
 
 
             //  CARGO EN ARCHIVO LOS NUEVOS DATOS EN CAMPOS DE TEXTO
-            
+
             try
             {
                 string archivoSeleccionado = treDirectorios.SelectedNode.FullPath;
@@ -131,10 +132,10 @@ namespace pryFernandezIES
                 swNuevo.Write(txtDireccion.Text + ";");
                 swNuevo.WriteLine(txtLiquidador.Text + ";");
 
-                
+
                 swNuevo.Close();
                 swNuevo.Dispose();
-                
+
                 MessageBox.Show("Proveedor agregado");
                 limpiar();
             }
@@ -142,32 +143,14 @@ namespace pryFernandezIES
             {
                 MessageBox.Show("No se econtro el archivo");
             }
-            
-        }
 
-        // SELECCION EN GRILLA
-        int posicion;
-        private void dgrArchivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // INDICE DE LA COLUMNA
-            posicion = dgrArchivos.CurrentRow.Index;
-
-            // TRASLADO LOS DATOS DE LA GRILLA A LOS TEXTBOX
-            txtNumero.Text = dgrArchivos[0, posicion].Value.ToString();
-            txtEntidad.Text = dgrArchivos[1, posicion].Value.ToString();
-            txtApertura.Text = dgrArchivos[2, posicion].Value.ToString();
-            txtNumExpediente.Text = dgrArchivos[3, posicion].Value.ToString();
-            txtJuzg.Text = dgrArchivos[4, posicion].Value.ToString();
-            txtJurisd.Text = dgrArchivos[5, posicion].Value.ToString();
-            txtDireccion.Text = dgrArchivos[6, posicion].Value.ToString();
-            txtLiquidador.Text = dgrArchivos[7, posicion].Value.ToString();
         }
 
         // MODIFICAR
         private void btnModificarProveedor_Click(object sender, EventArgs e)
         {
             string archivoSeleccionado = treDirectorios.SelectedNode.FullPath;
-            
+
             StreamWriter swModificar = new StreamWriter(archivoSeleccionado, true);
 
             dgrArchivos[0, posicion].Value = txtNumero.Text;
@@ -201,6 +184,12 @@ namespace pryFernandezIES
             swEliminar.Close();
             swEliminar.Dispose();
             GuardarCambiosEnCSV();
+        }
+
+        // LIMPIA LOS TEXTBOX
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiar();
         }
 
         // ACTUALIZAR .CSV
@@ -247,9 +236,22 @@ namespace pryFernandezIES
             swGuardar.Dispose();
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        // SELECCION EN GRILLA
+        int posicion;
+        private void dgrArchivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            limpiar();
+            // INDICE DE LA COLUMNA
+            posicion = dgrArchivos.CurrentRow.Index;
+
+            // TRASLADO LOS DATOS DE LA GRILLA A LOS TEXTBOX
+            txtNumero.Text = dgrArchivos[0, posicion].Value.ToString();
+            txtEntidad.Text = dgrArchivos[1, posicion].Value.ToString();
+            txtApertura.Text = dgrArchivos[2, posicion].Value.ToString();
+            txtNumExpediente.Text = dgrArchivos[3, posicion].Value.ToString();
+            txtJuzg.Text = dgrArchivos[4, posicion].Value.ToString();
+            txtJurisd.Text = dgrArchivos[5, posicion].Value.ToString();
+            txtDireccion.Text = dgrArchivos[6, posicion].Value.ToString();
+            txtLiquidador.Text = dgrArchivos[7, posicion].Value.ToString();
         }
         void limpiar()
         {

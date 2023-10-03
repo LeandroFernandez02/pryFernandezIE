@@ -36,6 +36,7 @@ namespace pryFernandezIES
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tiempoCarga = new System.Windows.Forms.Timer(this.components);
             this.pbrCarga = new System.Windows.Forms.ProgressBar();
+            this.lblCarga = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +86,7 @@ namespace pryFernandezIES
             // 
             // pbrCarga
             // 
-            this.pbrCarga.Location = new System.Drawing.Point(336, 363);
+            this.pbrCarga.Location = new System.Drawing.Point(337, 451);
             this.pbrCarga.Name = "pbrCarga";
             this.pbrCarga.Size = new System.Drawing.Size(260, 23);
             this.pbrCarga.Step = 20;
@@ -93,12 +94,24 @@ namespace pryFernandezIES
             this.pbrCarga.TabIndex = 8;
             this.pbrCarga.Visible = false;
             // 
+            // lblCarga
+            // 
+            this.lblCarga.BackColor = System.Drawing.Color.Transparent;
+            this.lblCarga.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCarga.ForeColor = System.Drawing.Color.White;
+            this.lblCarga.Location = new System.Drawing.Point(419, 373);
+            this.lblCarga.Name = "lblCarga";
+            this.lblCarga.Size = new System.Drawing.Size(100, 22);
+            this.lblCarga.TabIndex = 9;
+            this.lblCarga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmCargaPrograma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(22)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(934, 561);
+            this.Controls.Add(this.lblCarga);
             this.Controls.Add(this.pbrCarga);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnCerrar);
@@ -120,5 +133,6 @@ namespace pryFernandezIES
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ProgressBar pbrCarga;
         private System.Windows.Forms.Timer tiempoCarga;
+        private System.Windows.Forms.Label lblCarga;
     }
 }

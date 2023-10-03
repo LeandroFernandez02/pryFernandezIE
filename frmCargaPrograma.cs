@@ -24,9 +24,12 @@ namespace pryFernandezIES
             carga();
         }
 
+        // METODO PARA CARGAR FORMULARIO SIGUIENTE
         public void carga()
         {
             pbrCarga.Increment(2);
+            lblCarga.Text = Convert.ToString("%" + pbrCarga.Value);
+
             if (pbrCarga.Value == pbrCarga.Maximum)
             {
                 tiempoCarga.Stop();

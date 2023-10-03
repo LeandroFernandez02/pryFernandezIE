@@ -62,7 +62,6 @@ namespace pryFernandezIES
             pnlFormHijo.Tag = formHijo;
             formHijo.BringToFront();
             formHijo.Show();
-
         }
 
         // HORA

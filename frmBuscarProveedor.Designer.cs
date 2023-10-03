@@ -378,6 +378,7 @@ namespace pryFernandezIES
             this.dgrArchivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrArchivos.Location = new System.Drawing.Point(7, 3);
             this.dgrArchivos.Name = "dgrArchivos";
+            this.dgrArchivos.ReadOnly = true;
             this.dgrArchivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgrArchivos.Size = new System.Drawing.Size(481, 283);
             this.dgrArchivos.TabIndex = 1;
