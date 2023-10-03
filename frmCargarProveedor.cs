@@ -17,6 +17,7 @@ namespace pryFernandezIES
         {
             InitializeComponent();
             btnGuardar.Enabled = false;
+            fbdSeleccionCarpeta.SelectedPath = Application.StartupPath + "\\Proveedores";
         }
 
         private void btnSeleccionCarpeta_Click(object sender, EventArgs e)
