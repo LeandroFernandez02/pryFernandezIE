@@ -15,7 +15,7 @@ namespace pryFernandezIES
         private void frmBuscarProveedor_Load(object sender, EventArgs e)
         {
             //  CREO VARIABLE RUTA
-            string ruta = @"..\..\bin\Debug\Proveedores";
+            string ruta = Application.StartupPath + "\\Proveedores";
             treDirectorios.Nodes.Clear();
             pnlCargarProveedor.Visible = false;
 
@@ -97,6 +97,7 @@ namespace pryFernandezIES
                 //  CIERRO ARCHIVO
                 sr.Close();
                 sr.Dispose();
+                limpiar();
             }
             catch (Exception)
             {
