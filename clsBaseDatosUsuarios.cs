@@ -9,6 +9,19 @@ namespace pryFernandezIES
 {
     class clsBaseDatosUsuarios
     {
+        OleDbConnection conexionBD;
 
+        public void abrirBd()
+        {
+            try
+            {
+                conexionBD = new OleDbConnection();
+            }
+            catch (Exception)
+            {
+                
+            }
+
+        }
     }
 }
