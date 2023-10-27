@@ -114,6 +114,7 @@ namespace pryFernandezIES
             this.btnSeleccionCarpeta.BackgroundImage = global::pryFernandezIES.Properties.Resources.carpeta_removebg_preview;
             this.btnSeleccionCarpeta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSeleccionCarpeta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSeleccionCarpeta.FlatAppearance.BorderSize = 0;
             this.btnSeleccionCarpeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionCarpeta.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionCarpeta.Location = new System.Drawing.Point(76, 250);
@@ -149,6 +150,7 @@ namespace pryFernandezIES
             this.btnGuardar.BackgroundImage = global::pryFernandezIES.Properties.Resources.archivo_removebg_preview;
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Location = new System.Drawing.Point(451, 250);

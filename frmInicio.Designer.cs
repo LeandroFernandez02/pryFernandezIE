@@ -110,7 +110,6 @@ namespace pryFernandezIES
             this.Name = "frmInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Ventas Seguro";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctInicio)).EndInit();
             this.ResumeLayout(false);
 

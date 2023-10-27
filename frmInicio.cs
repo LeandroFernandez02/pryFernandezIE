@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,25 +17,11 @@ namespace pryFernandezIES
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            // pctInicio.Image = Image.FromFile(@"C:\Users\Leandro\Videos\videos editados\0926.mp4");
-            // pctInicio.SizeMode = PictureBoxSizeMode.StretchImage;
-            // Control OpenFileDialog
-            //   "    OpenFoulderDialog
-        }
-
         private void btnIniciar_Click(object sender, EventArgs e)
-        {
-            frmCargaPrograma principal = new frmCargaPrograma();
+        {          
+            frmInicioSesion principal = new frmInicioSesion();
             principal.Show();
-            this.Hide();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
+            this.Hide();               
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

@@ -29,45 +29,73 @@ namespace pryFernandezIES
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.pctCargando = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pctCargando)).BeginInit();
+            this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblEstadoConexion = new System.Windows.Forms.ToolStripStatusLabel();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnLocura = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // dgvCliente
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(73)))), ((int)(((byte)(123)))));
-            this.label1.Location = new System.Drawing.Point(303, 264);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Próximamente";
+            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCliente.Location = new System.Drawing.Point(117, 76);
+            this.dgvCliente.Name = "dgvCliente";
+            this.dgvCliente.Size = new System.Drawing.Size(504, 362);
+            this.dgvCliente.TabIndex = 0;
             // 
-            // pctCargando
+            // statusStrip1
             // 
-            this.pctCargando.BackColor = System.Drawing.Color.Transparent;
-            this.pctCargando.Image = global::pryFernandezIES.Properties.Resources.circle_1700_512;
-            this.pctCargando.Location = new System.Drawing.Point(279, 181);
-            this.pctCargando.Name = "pctCargando";
-            this.pctCargando.Size = new System.Drawing.Size(190, 190);
-            this.pctCargando.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctCargando.TabIndex = 1;
-            this.pctCargando.TabStop = false;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblEstadoConexion});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 543);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(752, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblEstadoConexion
+            // 
+            this.lblEstadoConexion.Name = "lblEstadoConexion";
+            this.lblEstadoConexion.Size = new System.Drawing.Size(28, 17);
+            this.lblEstadoConexion.Text = "* * *";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(440, 447);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(100, 20);
+            this.txtBuscar.TabIndex = 2;
+            // 
+            // btnLocura
+            // 
+            this.btnLocura.Location = new System.Drawing.Point(546, 445);
+            this.btnLocura.Name = "btnLocura";
+            this.btnLocura.Size = new System.Drawing.Size(75, 23);
+            this.btnLocura.TabIndex = 3;
+            this.btnLocura.Text = "Locura";
+            this.btnLocura.UseVisualStyleBackColor = true;
+            this.btnLocura.Click += new System.EventHandler(this.btnLocura_Click);
             // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 565);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pctCargando);
+            this.Controls.Add(this.btnLocura);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.dgvCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
-            ((System.ComponentModel.ISupportInitialize)(this.pctCargando)).EndInit();
+            this.Load += new System.EventHandler(this.frmClientes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -75,7 +103,10 @@ namespace pryFernandezIES
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pctCargando;
+        private System.Windows.Forms.DataGridView dgvCliente;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblEstadoConexion;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnLocura;
     }
 }

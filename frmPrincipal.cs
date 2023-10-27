@@ -46,6 +46,10 @@ namespace pryFernandezIES
         {
             abrirFormHijo(new frmAyuda());
         }
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            abrirFormHijo(new frmUsuarios());
+        }
 
         //  ABRIR FORMULARIO DENTRO DEL PRINCIPAL
         private Form formActivo = null;
@@ -82,6 +86,5 @@ namespace pryFernandezIES
         {
             this.WindowState = FormWindowState.Minimized;
         }
-    
-   }
+    }
 }

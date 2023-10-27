@@ -12,7 +12,7 @@ namespace pryFernandezIES
 {
     public partial class frmCargaPrograma : Form
     {
-        private int conteo;
+        
         public frmCargaPrograma()
         {
             InitializeComponent();
