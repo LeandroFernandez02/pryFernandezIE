@@ -20,7 +20,7 @@ namespace pryFernandezIES
             objBaseDatosUsuario = new clsBaseDatosUsuarios();
             objBaseDatosUsuario.ConectarBD();
         }
-     
+         
         private void btnInicioSesion_Click(object sender, EventArgs e)
         {
             if (btnInicioSesion.Text == "Siguiente")
@@ -41,8 +41,9 @@ namespace pryFernandezIES
                 }               
             }
             else if (btnInicioSesion.Text == "Acceder")
-            {
-                objBaseDatosUsuario.TraerDatos(txtUsuario.Text, txtContraseña.Text);
+            {              
+                objBaseDatosUsuario.Login(txtUsuario.Text, txtContraseña.Text, this);
+                
                 //Situacion de error CONTRASEÑA
                 if (txtContraseña.Text == string.Empty)
                 {
@@ -80,14 +81,11 @@ namespace pryFernandezIES
                     lblErrorContraseña.Visible = false;
                 }
             }
-
         }
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             timer1.Start();
         }
-
-
 
         private void txtUsuario_Enter(object sender, EventArgs e)
         {

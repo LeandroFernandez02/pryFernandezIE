@@ -12,9 +12,17 @@ namespace pryFernandezIES
 {
     public partial class frmPrincipal : Form
     {
-        public frmPrincipal()
+        clsBaseDatosLogs objBaseDatosLogs;
+        string varUsuario;
+        
+        public frmPrincipal(string usuario)
         {
             InitializeComponent();
+
+            varUsuario = usuario;
+
+            objBaseDatosLogs = new clsBaseDatosLogs();
+            objBaseDatosLogs.ConectarBD();
         }
 
         //  MENU
@@ -23,31 +31,50 @@ namespace pryFernandezIES
             if (formActivo != null)
             {
                 formActivo.Close();
-            }
-            
+            }          
         }
 
         private void btnCargarProveedores_Click(object sender, EventArgs e)
         {
+            DateTime fechaHora = DateTime.Now;
+            string detalle = "Ingreso a Carga Proveedores";
+            objBaseDatosLogs.Logs(varUsuario, fechaHora, detalle);
+            
             abrirFormHijo(new frmCargarProveedor());
         }
 
         private void btnBuscarProveedor_Click(object sender, EventArgs e)
         {
+            DateTime fechaHora = DateTime.Now;
+            string detalle = "Ingreso a Buscar Proveedores";
+            objBaseDatosLogs.Logs(varUsuario, fechaHora, detalle);
+
             abrirFormHijo(new frmBuscarProveedor());
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
+            DateTime fechaHora = DateTime.Now;
+            string detalle = "Ingreso a Clientes";
+            objBaseDatosLogs.Logs(varUsuario, fechaHora, detalle);
+
             abrirFormHijo(new frmClientes());
         }
 
         private void btnAyuda_Click(object sender, EventArgs e)
         {
+            DateTime fechaHora = DateTime.Now;
+            string detalle = "Ingreso a Ayuda";
+            objBaseDatosLogs.Logs(varUsuario, fechaHora, detalle);
+
             abrirFormHijo(new frmAyuda());
         }
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
+            DateTime fechaHora = DateTime.Now;
+            string detalle = "Ingreso a Usuarios";
+            objBaseDatosLogs.Logs(varUsuario, fechaHora, detalle);
+
             abrirFormHijo(new frmUsuarios());
         }
 
@@ -73,12 +100,17 @@ namespace pryFernandezIES
         {
             string hora = DateTime.Now.ToLongTimeString();
             string fecha = DateTime.Now.ToLongDateString();
+
             lblFechaHora.Text = hora + "   " + fecha; 
         }
 
         // CERRAR Y MINIMIZAR
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            DateTime fechaHora = DateTime.Now;
+            string detalle = "Cierre de Sistema";
+            objBaseDatosLogs.Logs(varUsuario, fechaHora, detalle);
+
             Application.Exit();
         }
 

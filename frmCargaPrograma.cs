@@ -12,11 +12,11 @@ namespace pryFernandezIES
 {
     public partial class frmCargaPrograma : Form
     {
-        
-        public frmCargaPrograma()
+        string varUsuario;
+        public frmCargaPrograma(string usuario)
         {
             InitializeComponent();
-
+            varUsuario = usuario;
         }
 
         private void tiempoCarga_Tick(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace pryFernandezIES
             {
                 tiempoCarga.Stop();
                 this.Hide();
-                frmPrincipal abrirPrincipal = new frmPrincipal();
+                frmPrincipal abrirPrincipal = new frmPrincipal(varUsuario);
                 abrirPrincipal.Show();
             }
         }

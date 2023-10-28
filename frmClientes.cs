@@ -26,8 +26,6 @@ namespace pryFernandezIES
             lblEstadoConexion.Text = objBaseDatosCliente.estadoConexion;
             lblEstadoConexion.BackColor = Color.Green;
 
-
-
             objBaseDatosCliente.TraerDatos(dgvCliente);
         }
 

@@ -66,12 +66,10 @@ namespace pryFernandezIES
                     grilla.Rows.Add(lectorBD[1],lectorBD[2],lectorBD[4], lectorBD[5], lectorBD[6], lectorBD[7]);
                 }
             }
-
         }
 
         public void BuscarPorID(int codigo)
         {
-
             comandoBD = new OleDbCommand();
 
             comandoBD.Connection = conexionBD;
@@ -79,8 +77,6 @@ namespace pryFernandezIES
             comandoBD.CommandText = "CLIENTES"; //Que tabla traigo
 
             lectorBD = comandoBD.ExecuteReader(); //abre la tabla y muestra por renglon
-
-
 
             if (lectorBD.HasRows) //SI TIENE FILAS
             {
@@ -99,9 +95,7 @@ namespace pryFernandezIES
                 }
                 if (Find == false)
                 {
-
                     MessageBox.Show("NO Existente " + lectorBD[0], "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
                 }
             }
         }

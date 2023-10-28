@@ -13,6 +13,7 @@ namespace pryFernandezIES
     public partial class frmUsuarios : Form
     {
         clsBaseDatosUsuarios objBaseDatosUsuarios;
+        clsBaseDatosLogs objBaseDatosLogs;
         public frmUsuarios()
         {
             InitializeComponent();
@@ -23,9 +24,18 @@ namespace pryFernandezIES
             objBaseDatosUsuarios = new clsBaseDatosUsuarios();
             objBaseDatosUsuarios.ConectarBD();
 
+            objBaseDatosLogs = new clsBaseDatosLogs();
+            objBaseDatosLogs.ConectarBD();
+
             lblEstadoConexion.BackColor = Color.Green;
 
-            //objBaseDatosUsuarios.TraerDatos();
+            objBaseDatosUsuarios.TraerDatos(dgvUsuarios);
+            objBaseDatosLogs.TraerDatos(dgvLogs);
+        }
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -153,7 +153,7 @@ namespace pryFernandezIES
             this.pnlLogin.Controls.Add(this.btnInicioSesion);
             this.pnlLogin.Location = new System.Drawing.Point(27, 156);
             this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(374, 239);
+            this.pnlLogin.Size = new System.Drawing.Size(379, 239);
             this.pnlLogin.TabIndex = 7;
             // 
             // pnlContraseña
