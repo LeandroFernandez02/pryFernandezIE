@@ -107,9 +107,11 @@ namespace pryFernandezIES
             this.Controls.Add(this.pctInicio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "frmInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Ventas Seguro";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmInicio_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pctInicio)).EndInit();
             this.ResumeLayout(false);
 

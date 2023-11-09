@@ -399,6 +399,15 @@ namespace pryFernandezIES
             {
                 e.Handled = true;
             }
-        }   
+        }
+
+        private void frmBuscarProveedor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                e.Handled = true;
+                Application.Exit();
+            }
+        }
     }
 }

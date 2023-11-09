@@ -63,5 +63,14 @@ namespace pryFernandezIES
             lblDireccion.Text = "";
             txtNombreArchivo.Clear();
         }
+
+        private void frmCargarProveedor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                e.Handled = true;
+                Application.Exit();
+            }
+        }
     }
 }

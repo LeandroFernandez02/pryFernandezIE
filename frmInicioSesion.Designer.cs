@@ -74,6 +74,7 @@ namespace pryFernandezIES
             this.txtUsuario.Size = new System.Drawing.Size(262, 21);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave);
             // 
             // lblNombre
@@ -153,7 +154,7 @@ namespace pryFernandezIES
             this.pnlLogin.Controls.Add(this.btnInicioSesion);
             this.pnlLogin.Location = new System.Drawing.Point(27, 156);
             this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(379, 239);
+            this.pnlLogin.Size = new System.Drawing.Size(378, 239);
             this.pnlLogin.TabIndex = 7;
             // 
             // pnlContraseña
@@ -245,6 +246,7 @@ namespace pryFernandezIES
             this.txtContraseña.Size = new System.Drawing.Size(259, 21);
             this.txtContraseña.TabIndex = 0;
             this.txtContraseña.Enter += new System.EventHandler(this.txtContraseña_Enter);
+            this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
             this.txtContraseña.Leave += new System.EventHandler(this.txtContraseña_Leave);
             // 
             // timer1
@@ -314,9 +316,11 @@ namespace pryFernandezIES
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "frmInicioSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de Sesion";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmInicioSesion_KeyDown);
             this.pnlUsuario.ResumeLayout(false);
             this.pnlUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

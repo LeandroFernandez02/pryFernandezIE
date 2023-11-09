@@ -89,10 +89,12 @@ namespace pryFernandezIES
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgvCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "frmClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.frmClientes_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmClientes_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

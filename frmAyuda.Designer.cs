@@ -64,9 +64,11 @@ namespace pryFernandezIES
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pctCargando);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "frmAyuda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ayuda";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmAyuda_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pctCargando)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -118,5 +118,14 @@ namespace pryFernandezIES
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void frmPrincipal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                e.Handled = true;
+                Application.Exit();
+            }
+        }
     }
 }

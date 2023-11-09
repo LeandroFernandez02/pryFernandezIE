@@ -104,6 +104,7 @@ namespace pryFernandezIES
                 if (varContador >= 3)
                 {
                     MessageBox.Show("Demaciados intentos de inicio de sesion, el sistema se cerrara");
+                  
                     Application.Exit();
                 }
             }
