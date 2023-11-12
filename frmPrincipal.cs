@@ -14,15 +14,28 @@ namespace pryFernandezIES
     {
         clsBaseDatosLogs objBaseDatosLogs;
         string varUsuario;
+        string varCategoria;
         
-        public frmPrincipal(string usuario)
+        public frmPrincipal(string usuario, string categoria)
         {
             InitializeComponent();
 
             varUsuario = usuario;
+            varCategoria = categoria;
 
             objBaseDatosLogs = new clsBaseDatosLogs();
             objBaseDatosLogs.ConectarBD();
+
+            if (varCategoria == "Admin")
+            {
+                btnUsuarios.Visible = true;
+                btnUsuarios.Enabled = true;
+            }
+            if (varCategoria == "User")
+            {
+                btnUsuarios.Visible = false;
+                btnUsuarios.Enabled = false;
+            }
         }
 
         //  MENU
@@ -71,6 +84,7 @@ namespace pryFernandezIES
         }
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
+            
             DateTime fechaHora = DateTime.Now;
             string detalle = "Ingreso a Usuarios";
             objBaseDatosLogs.Logs(varUsuario, fechaHora, detalle);

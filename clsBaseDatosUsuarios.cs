@@ -62,6 +62,8 @@ namespace pryFernandezIES
 
         public void Login(string usuario, string contraseña,frmInicioSesion frmInicio)
         {
+            
+
             comandoBD = new OleDbCommand();
 
             comandoBD.Connection = conexionBD;
@@ -78,15 +80,19 @@ namespace pryFernandezIES
                 {     
                     if (lectorBD[1].ToString() == usuario && lectorBD[2].ToString() == contraseña)
                     {
-                        clsBaseDatosLogs objBaseDatosLogs;
-                        objBaseDatosLogs = new clsBaseDatosLogs();                    
+                        string categoria = lectorBD[3].ToString(); 
+                        
+                        //
+                            clsBaseDatosLogs objBaseDatosLogs;
+                            objBaseDatosLogs = new clsBaseDatosLogs();                    
 
-                        DateTime fechaHora = DateTime.Now;
-                        string detalle = "Inicio de Sesion";
-                        objBaseDatosLogs.Logs(usuario, fechaHora, detalle);
+                            DateTime fechaHora = DateTime.Now;
+                            string detalle = "Inicio de Sesion";
+                            objBaseDatosLogs.Logs(usuario, fechaHora, detalle);
+                        //
 
                         frmInicio.Hide();
-                        frmCargaPrograma pasar = new frmCargaPrograma(usuario);
+                        frmCargaPrograma pasar = new frmCargaPrograma(usuario,categoria);
                         pasar.Show();
                         varEncontro++;
 

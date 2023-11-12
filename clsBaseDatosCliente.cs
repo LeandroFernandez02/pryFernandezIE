@@ -54,7 +54,8 @@ namespace pryFernandezIES
             grilla.Columns.Add("Sexo", "Sexo");
             grilla.Columns.Add("Ingreso", "Ingreso");
             grilla.Columns.Add("Puntaje", "Puntaje");
-            
+            grilla.Columns.Add("Atividad", "Actividad");
+
 
             //leo como si fuera un archivo
             if (lectorBD.HasRows)
@@ -62,7 +63,7 @@ namespace pryFernandezIES
                 while (lectorBD.Read())
                 {
                     datosTabla += "-" + lectorBD[1];
-                    grilla.Rows.Add(lectorBD[1],lectorBD[2],lectorBD[4], lectorBD[5], lectorBD[6], lectorBD[7]);
+                    grilla.Rows.Add(lectorBD[1],lectorBD[2],lectorBD[4], lectorBD[5], lectorBD[6], lectorBD[7], lectorBD[8]);
                 }
             }
         }

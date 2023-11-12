@@ -41,9 +41,9 @@ namespace pryFernandezIES
             // dgvCliente
             // 
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Location = new System.Drawing.Point(117, 76);
+            this.dgvCliente.Location = new System.Drawing.Point(12, 79);
             this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.Size = new System.Drawing.Size(504, 362);
+            this.dgvCliente.Size = new System.Drawing.Size(728, 362);
             this.dgvCliente.TabIndex = 0;
             // 
             // statusStrip1
@@ -75,7 +75,7 @@ namespace pryFernandezIES
             this.btnLocura.Name = "btnLocura";
             this.btnLocura.Size = new System.Drawing.Size(75, 23);
             this.btnLocura.TabIndex = 3;
-            this.btnLocura.Text = "Locura";
+            this.btnLocura.Text = "Buscar";
             this.btnLocura.UseVisualStyleBackColor = true;
             this.btnLocura.Click += new System.EventHandler(this.btnLocura_Click);
             // 

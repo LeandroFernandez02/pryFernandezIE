@@ -75,7 +75,7 @@ namespace pryFernandezIES
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuarios.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 149);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 235);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(200, 37);
             this.btnUsuarios.TabIndex = 5;
@@ -91,7 +91,7 @@ namespace pryFernandezIES
             this.btnBuscarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarProveedor.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarProveedor.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarProveedor.Location = new System.Drawing.Point(0, 235);
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(0, 192);
             this.btnBuscarProveedor.Name = "btnBuscarProveedor";
             this.btnBuscarProveedor.Size = new System.Drawing.Size(200, 37);
             this.btnBuscarProveedor.TabIndex = 3;
@@ -107,7 +107,7 @@ namespace pryFernandezIES
             this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAyuda.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAyuda.ForeColor = System.Drawing.Color.White;
-            this.btnAyuda.Location = new System.Drawing.Point(0, 278);
+            this.btnAyuda.Location = new System.Drawing.Point(0, 516);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Size = new System.Drawing.Size(200, 37);
             this.btnAyuda.TabIndex = 2;
@@ -123,7 +123,7 @@ namespace pryFernandezIES
             this.btnCargarProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCargarProveedores.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargarProveedores.ForeColor = System.Drawing.Color.White;
-            this.btnCargarProveedores.Location = new System.Drawing.Point(0, 192);
+            this.btnCargarProveedores.Location = new System.Drawing.Point(0, 149);
             this.btnCargarProveedores.Name = "btnCargarProveedores";
             this.btnCargarProveedores.Size = new System.Drawing.Size(200, 37);
             this.btnCargarProveedores.TabIndex = 2;
