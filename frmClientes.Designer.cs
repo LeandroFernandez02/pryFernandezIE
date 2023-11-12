@@ -34,6 +34,7 @@ namespace pryFernandezIES
             this.lblEstadoConexion = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnLocura = new System.Windows.Forms.Button();
+            this.btnActividad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -43,6 +44,7 @@ namespace pryFernandezIES
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCliente.Location = new System.Drawing.Point(12, 79);
             this.dgvCliente.Name = "dgvCliente";
+            this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCliente.Size = new System.Drawing.Size(728, 362);
             this.dgvCliente.TabIndex = 0;
             // 
@@ -79,11 +81,22 @@ namespace pryFernandezIES
             this.btnLocura.UseVisualStyleBackColor = true;
             this.btnLocura.Click += new System.EventHandler(this.btnLocura_Click);
             // 
+            // btnActividad
+            // 
+            this.btnActividad.Location = new System.Drawing.Point(297, 445);
+            this.btnActividad.Name = "btnActividad";
+            this.btnActividad.Size = new System.Drawing.Size(119, 23);
+            this.btnActividad.TabIndex = 4;
+            this.btnActividad.Text = "Modificar Actividad";
+            this.btnActividad.UseVisualStyleBackColor = true;
+            this.btnActividad.Click += new System.EventHandler(this.btnActividad_Click);
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 565);
+            this.Controls.Add(this.btnActividad);
             this.Controls.Add(this.btnLocura);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.statusStrip1);
@@ -110,5 +123,6 @@ namespace pryFernandezIES
         private System.Windows.Forms.ToolStripStatusLabel lblEstadoConexion;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnLocura;
+        private System.Windows.Forms.Button btnActividad;
     }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Reflection.Emit;
 using System.Windows.Forms;
+using System.Data;
 
 
 namespace pryFernandezIES
@@ -17,6 +18,8 @@ namespace pryFernandezIES
         OleDbConnection conexionBD;
         OleDbCommand comandoBD;
         OleDbDataReader lectorBD;
+        OleDbDataAdapter adaptadorBD;
+        DataSet objDataSet = new DataSet();
 
         string cadenaConexion = "Provider=Microsoft.ACE.OLEDB.12.0;" + @"Data Source=EL_CLUB.accdb";
 
@@ -48,6 +51,7 @@ namespace pryFernandezIES
             comandoBD.CommandText = "CLIENTES";
 
             lectorBD = comandoBD.ExecuteReader();
+            grilla.Columns.Add("CODIGO_SOCIO", "CODIGO_SOCIO");
             grilla.Columns.Add("Nombre", "Nombre");
             grilla.Columns.Add("Apellido", "Apellido");
             grilla.Columns.Add("Edad","Edad");
@@ -55,15 +59,15 @@ namespace pryFernandezIES
             grilla.Columns.Add("Ingreso", "Ingreso");
             grilla.Columns.Add("Puntaje", "Puntaje");
             grilla.Columns.Add("Atividad", "Actividad");
-
-
-            //leo como si fuera un archivo
+                      
             if (lectorBD.HasRows)
             {
                 while (lectorBD.Read())
                 {
+                    string actividad = (bool)lectorBD["Actividad"] ? "Activo" : "Inactivo";
+
                     datosTabla += "-" + lectorBD[1];
-                    grilla.Rows.Add(lectorBD[1],lectorBD[2],lectorBD[4], lectorBD[5], lectorBD[6], lectorBD[7], lectorBD[8]);
+                    grilla.Rows.Add(lectorBD[0],lectorBD[1],lectorBD[2],lectorBD[4], lectorBD[5], lectorBD[6], lectorBD[7], actividad);
                 }
             }
         }
@@ -100,5 +104,44 @@ namespace pryFernandezIES
             }
         }
 
+        public void actividadCliente(int codigo)
+        {
+            ConectarBD();
+
+            comandoBD = new OleDbCommand();
+            comandoBD.Connection = conexionBD;
+            comandoBD.CommandType = System.Data.CommandType.TableDirect;
+            comandoBD.CommandText = "CLIENTES";
+
+            adaptadorBD = new OleDbDataAdapter(comandoBD);
+            adaptadorBD.Fill(objDataSet,"CLIENTES");
+
+            DataTable dt = objDataSet.Tables["CLIENTES"];
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                
+                if ((int)dr["CODIGO_SOCIO"] == codigo)
+                {
+                    if ((bool)dr["ACTIVIDAD"] == false)
+                    {                       
+                        dr.BeginEdit();
+                        dr["ACTIVIDAD"] = true;
+                        dr.EndEdit();                     
+                        break;
+                    }
+                    else if ((bool)dr["ACTIVIDAD"] == true)
+                    {
+                        dr.BeginEdit();
+                        dr["ACTIVIDAD"] = false;
+                        dr.EndEdit();
+                        break;
+                    }
+                }                          
+            }
+            OleDbCommandBuilder cb = new OleDbCommandBuilder(adaptadorBD);
+           
+            adaptadorBD.Update(objDataSet, "CLIENTES");                     
+        }
     }
 }

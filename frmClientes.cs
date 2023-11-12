@@ -27,6 +27,7 @@ namespace pryFernandezIES
             lblEstadoConexion.BackColor = Color.Green;
 
             objBaseDatosCliente.TraerDatos(dgvCliente);
+            
         }
 
         private void btnLocura_Click(object sender, EventArgs e)
@@ -37,16 +38,16 @@ namespace pryFernandezIES
             }
             catch (Exception)
             {
-                if(txtBuscar.Text == "")
+                if (txtBuscar.Text == "")
                 {
                     MessageBox.Show("El campo esta vacio");
                 }
                 else
                 {
                     MessageBox.Show("El movimiento no existe");
-                }              
+                }
             }
-            
+
         }
 
         private void frmClientes_KeyDown(object sender, KeyEventArgs e)
@@ -56,6 +57,23 @@ namespace pryFernandezIES
                 e.Handled = true;
                 Application.Exit();
             }
+        }
+
+        private void btnActividad_Click(object sender, EventArgs e)
+        {
+            if (dgvCliente.SelectedRows.Count > 0)
+            {
+                // Obtén el valor de "CODIGO_SOCIO" de la fila seleccionada
+                object codigoSocioValue = dgvCliente.SelectedRows[0].Cells["CODIGO_SOCIO"].Value;
+
+                int codigoSocio = Convert.ToInt32(codigoSocioValue);
+       
+                objBaseDatosCliente.actividadCliente(codigoSocio);                           
+            }
+            dgvCliente.Rows.Clear();
+            dgvCliente.Columns.Clear();
+
+            objBaseDatosCliente.TraerDatos(dgvCliente);
         }
     }
 }
