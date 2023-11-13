@@ -16,6 +16,8 @@ namespace pryFernandezIES
         OleDbConnection conexionBD;
         OleDbCommand comandoBD;
         OleDbDataReader lectorBD;
+        OleDbDataAdapter adaptadorBD;
+        DataSet objDataSet = new DataSet();
 
         public void ConectarBD()
         {
@@ -48,6 +50,7 @@ namespace pryFernandezIES
             grilla.Columns.Add("Id", "Id");
             grilla.Columns.Add("Nombre", "Nombre");
             grilla.Columns.Add("Contraseña", "Contraseña");
+            grilla.Columns.Add("Categoria", "Categoria");
 
             //leo como si fuera un archivo
             if (lectorBD.HasRows)
@@ -55,15 +58,13 @@ namespace pryFernandezIES
                 while (lectorBD.Read())
                 {
                     datosTabla += "-" + lectorBD[1];
-                    grilla.Rows.Add(lectorBD[0], lectorBD[1], lectorBD[2]);
+                    grilla.Rows.Add(lectorBD[0], lectorBD[1], lectorBD[2],lectorBD[3]);
                 }
             }
         }
 
         public void Login(string usuario, string contraseña,frmInicioSesion frmInicio)
         {
-            
-
             comandoBD = new OleDbCommand();
 
             comandoBD.Connection = conexionBD;
@@ -114,6 +115,33 @@ namespace pryFernandezIES
                     Application.Exit();
                 }
             }
+        }
+
+        public void registrar(string usuario, string contraseña, string categoria)
+        {
+
+            ConectarBD();
+
+            comandoBD = new OleDbCommand();
+            comandoBD.Connection = conexionBD;
+            comandoBD.CommandType = System.Data.CommandType.TableDirect;
+            comandoBD.CommandText = "USUARIOS";
+
+            adaptadorBD = new OleDbDataAdapter(comandoBD);
+            adaptadorBD.Fill(objDataSet, "USUARIOS");
+
+            DataTable dt = objDataSet.Tables["USUARIOS"];
+            DataRow dr = dt.NewRow();
+
+            dr["Nombre"] = usuario;
+            dr["Contraseña"] = contraseña;
+            dr["Categoria"] = categoria;
+
+            dt.Rows.Add(dr);
+            OleDbCommandBuilder cb = new OleDbCommandBuilder(adaptadorBD);
+
+            adaptadorBD.Update(objDataSet, "USUARIOS");
+            
         }
     }
 }

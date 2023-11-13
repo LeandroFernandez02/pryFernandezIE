@@ -33,10 +33,7 @@ namespace pryFernandezIES
             objBaseDatosLogs.TraerDatos(dgvLogs);
         }
 
-        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
 
         private void frmUsuarios_KeyDown(object sender, KeyEventArgs e)
         {
@@ -45,6 +42,18 @@ namespace pryFernandezIES
                 e.Handled = true;
                 Application.Exit();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {           
+            objBaseDatosUsuarios.registrar(txtNombre.Text, txtContraseña.Text, Convert.ToString(lstCategoria.SelectedItem));
+            dgvUsuarios.Rows.Clear();
+            dgvUsuarios.Columns.Clear();
+            objBaseDatosUsuarios.TraerDatos(dgvUsuarios);
+            txtNombre.Clear();
+            txtContraseña.Clear();
+            lstCategoria.Items.Clear();
+            MessageBox.Show("Usuario Registrado con Exito");
         }
     }
 }
