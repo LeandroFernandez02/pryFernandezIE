@@ -30,7 +30,7 @@ namespace pryFernandezIES
         {
             try
             {
-                conexionBD = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source=EL_CLUB.accdb");
+                conexionBD = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\EL_CLUB.accdb");
                 conexionBD.Open();
             }
             catch (Exception ex)

@@ -6,24 +6,21 @@ namespace pryFernandezIES
 {
     public partial class frmBuscarProveedor : Form
     {
+        DirectoryInfo rutaBase = new DirectoryInfo(@"../../Resources/Proveedores/");
         public frmBuscarProveedor()
         {
             InitializeComponent();
+
+            treDirectorios.Nodes.Clear();
+            //DirectoryInfo rutaBase = new DirectoryInfo(@"../../Resources/Proveedores/");            
+            treDirectorios.Nodes.Add(crearArbol(rutaBase));
         }
 
         //CREA TREVIEW
         private void frmBuscarProveedor_Load(object sender, EventArgs e)
-        {
-            //  CREO VARIABLE RUTA
-            string ruta = Application.StartupPath + "\\Proveedores";
-            treDirectorios.Nodes.Clear();
+        {         
             pnlCargarProveedor.Visible = false;
-
-            //  CREO OBJETO RUTABASE QUE HEREDA LA RUTA
-            DirectoryInfo rutaBase = new DirectoryInfo(ruta);
-
-            //  SE CREA EL TREVIEW CON LA CLASE DEFINIDA ABAJO
-            treDirectorios.Nodes.Add(crearArbol(rutaBase));
+          
         }
 
         // CREO UNA METODO PARA CARGAR EL TREVIEW
@@ -70,13 +67,13 @@ namespace pryFernandezIES
                     return;
                 }
                 //  CREO VARIABLES CON LA RUTA SELECCIONADA EN EL TREVIEW
-                string rutaArchivo = Convert.ToString(treDirectorios.SelectedNode.FullPath);
-                string nombreArchivo = Convert.ToString(treDirectorios.SelectedNode.Name);
+                string rutaArchivo = @"../../Resources/" + Convert.ToString(treDirectorios.SelectedNode.FullPath);
+                //string nombreArchivo = @"../../Resources/" + Convert.ToString(treDirectorios.SelectedNode.Name);
 
                 //  ABRO EL ARCHIVO PARA LEERLO
                 StreamReader sr = new StreamReader(rutaArchivo, true);
 
-                //  LEE LINEA Y SEPARA SI DETECTA ";"
+                //  LEE LINEA Y SEPARA SI DETECTA "; "
                 leerLinea = sr.ReadLine();
                 separarDatos = leerLinea.Split(';');
 
@@ -99,9 +96,9 @@ namespace pryFernandezIES
                 sr.Dispose();
                 limpiar();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Selecciona un Archivo");
+                MessageBox.Show("Selecciona un Archivo" + ex);
             }
         }
 

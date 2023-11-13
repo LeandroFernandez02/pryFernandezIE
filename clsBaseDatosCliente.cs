@@ -21,7 +21,7 @@ namespace pryFernandezIES
         OleDbDataAdapter adaptadorBD;
         DataSet objDataSet = new DataSet();
 
-        string cadenaConexion = "Provider=Microsoft.ACE.OLEDB.12.0;" + @"Data Source=EL_CLUB.accdb";
+        string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\EL_CLUB.accdb";
 
         public string estadoConexion = "";
         public string datosTabla;
